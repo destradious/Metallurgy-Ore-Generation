@@ -92,12 +92,12 @@
                 <Choice value='none' displayValue='None' description='No iron is generated at all.'/>
             </OptionChoice>
             
-            <OptionNumeric name='ironFreq' default='0.75'  min='0' max='5' displayState='hidden' displayGroup='groupStdOres'>
+            <OptionNumeric name='ironFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupStdOres'>
                 <Description> Frequency multiplier for Iron distributions </Description>
                 <DisplayName>Iron Freq.</DisplayName>
             </OptionNumeric>
             
-            <OptionNumeric name='ironSize' default='0.75'  min='0' max='5' displayState='hidden' displayGroup='groupStdOres'>
+            <OptionNumeric name='ironSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupStdOres'>
                 <Description> Size multiplier for Iron distributions </Description>
                 <DisplayName>Iron Size</DisplayName>
             </OptionNumeric>    
@@ -388,6 +388,16 @@
                     <Setting name='SegmentRadius' avg=':= coalSize * _default_' range=':= coalSize * _default_'/>
                     <Setting name='OreDensity' avg=':= 1.75 * _default_' range=':= _default_'/>
                 </Veins>
+
+                <Veins name='CoalVeinsHills' inherits='CoalVeins'>
+                    <Description>  Adds Coal to spawn between heights 100 and 64 (up into mountains/hills). </Description>      
+                    <Setting name='MotherlodeFrequency' avg=':= _default_'/>
+                    <Setting name='MotherlodeHeight' avg=':= 84/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
+                    <Setting name='BranchHeightLimit' avg=':= _default_'/>  
+                    <BiomeType name='Hills.*'/>
+                    <BiomeType name='Extreme.*'/>
+                </Veins>      
+
                 <Veins name='CoalVeinsSwamp' inherits='CoalVeins'>
                     <Description>  This roughly triples the chance of finding coal in a swamp. </Description>      
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
@@ -437,16 +447,26 @@
             <IfCondition condition=':= if(age, age.ironVeins > 0, ironDist = "layeredVeins")'>
                 <Veins name='IronVeins' block='oreIron' inherits='PresetLayeredVeins'>
                     <Description> 
-                        Iron spawns in the height 30-50 range.  The veins are average in length and size.
+                        Iron spawns in the height 55-25 range.  The veins are average in length and size.
                     </Description> 
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x40221100</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 0.9 * ironFreq * if(age,age.ironVeins,1) * _default_'/>
                     <Setting name='MotherlodeSize' avg=':= ironSize * _default_' range=':= ironSize * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 43/64 * dimension.groundLevel' range=':= 10.5/64 * dimension.groundLevel' type='normal'/>
+                    <Setting name='MotherlodeHeight' avg=':= 43/64 * dimension.groundLevel' range=':= 11/64 * dimension.groundLevel' type='normal'/>
                     <Setting name='BranchHeightLimit' avg='10.5'/>
                     <Setting name='SegmentRadius' avg=':= ironSize * _default_' range=':= ironSize * _default_'/>
                 </Veins>
+
+                <Veins name='IronVeinsHills' inherits='IronVeins'>
+                    <Description>  Adds Iron to spawn between heights 100 and 64 (up into mountains/hills), but half as much. </Description>      
+                    <Setting name='MotherlodeFrequency' avg=':= 0.5 * _default_'/>
+                    <Setting name='MotherlodeHeight' avg=':= 84/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
+                    <Setting name='BranchHeightLimit' avg=':= 0.5 * _default_'/>  
+                    <BiomeType name='Hills.*'/>
+                    <BiomeType name='Extreme.*'/>
+                </Veins>      
+
                 <Veins name='IronVeinsCold' inherits='IronVeins'>
                     <Description> This roughly triples the chance of finding iron in cold/icy biomes. </Description> 
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
@@ -479,6 +499,7 @@
             </IfCondition>      
        
         </ConfigSection>           
+        
         
         <!--*******************   Gold   ***********************-->
         <ConfigSection>
