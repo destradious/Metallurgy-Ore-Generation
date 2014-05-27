@@ -1,0 +1,285 @@
+<!--************************  CustomOreGen Minecraft Ores Module *********************************
+*
+*   This file contains Presets, Options, and Distributions for the Matallurgy Mod Base Ores:
+*   Copper, Tin, Manganese.
+*
+***********************************************************************************************-->
+<ConfigSection>
+
+    <!--***************************   Options + Symbols   ***********************************
+    *
+    *   Below are options and symbols for Metallurgy Base Ores. Each ore has a "type" option 
+    *   corresponding to select which distribution is used for that ore in the
+    *   overworld, and 3 mystcraft symbols for selecting distributions in mystcraft ages.
+    *
+    *   The ore also has its own overall "frequency" and "size" multipliers.  These are 
+    *   provided so people can tweak the rarity of each ore from the options file rather 
+    *   than having to edit the config directly.
+    *
+    *************************************************************************************-->
+    <ConfigSection>
+    
+        <OptionDisplayGroup name='groupMetallurgyBaseOres' displayName='Metallurgy Base Ores' displayState='shown'>
+            <Description> 
+                Distribution options for the Metallurgy Base Ores  (Copper, Tin, Manganese).
+            </Description>
+        </OptionDisplayGroup>
+
+
+        <!--*******************   Copper   ***********************-->
+        <ConfigSection>
+        
+            <OptionChoice name='copperDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Controls how Copper is generated. </Description>
+                <DisplayName>Copper Type</DisplayName>
+
+                <Choice value='vanillaStdGen' displayValue='Clusters'>
+                    <Description> 
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
+                    </Description>
+                </Choice>
+
+                <Choice value='none' displayValue='None' description='No copper is generated at all.'/>
+
+            </OptionChoice>
+
+            
+            <OptionNumeric name='copperFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Frequency multiplier for Copper distributions </Description>
+                <DisplayName>Copper Freq.</DisplayName>
+            </OptionNumeric> 
+            
+            <OptionNumeric name='copperSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Size multiplier for Copper distributions </Description>
+                <DisplayName>Copper Size</DisplayName>
+            </OptionNumeric>
+
+            <MystcraftSymbol name='copperClusters' displayName='Copper Clusters'/>
+       
+        </ConfigSection>        
+        <!-- ********** / Copper ********** -->
+
+
+        <!--*******************   Tin   ***********************-->
+        <ConfigSection>
+        
+            <OptionChoice name='tinDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Controls how Tin is generated. </Description>
+                <DisplayName>Tin Type</DisplayName>
+
+                <Choice value='vanillaStdGen' displayValue='Clusters'>
+                    <Description> 
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
+                    </Description>
+                </Choice>
+
+                <Choice value='none' displayValue='None' description='No tin is generated at all.'/>
+
+            </OptionChoice>
+
+            
+            <OptionNumeric name='tinFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Frequency multiplier for Tin distributions </Description>
+                <DisplayName>Tin Freq.</DisplayName>
+            </OptionNumeric> 
+            
+            <OptionNumeric name='tinSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Size multiplier for Tin distributions </Description>
+                <DisplayName>Tin Size</DisplayName>
+            </OptionNumeric>
+
+            <MystcraftSymbol name='tinClusters' displayName='Tin Clusters'/>
+       
+        </ConfigSection>        
+        <!-- ********** / Tin ********** -->
+
+
+        <!--*******************   Manganese   ***********************-->
+        <ConfigSection>
+        
+            <OptionChoice name='manganeseDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Controls how Manganese is generated. </Description>
+                <DisplayName>Manganese Type</DisplayName>
+
+                <Choice value='vanillaStdGen' displayValue='Clusters'>
+                    <Description> 
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
+                    </Description>
+                </Choice>
+
+                <Choice value='none' displayValue='None' description='No manganese is generated at all.'/>
+
+            </OptionChoice>
+
+            
+            <OptionNumeric name='manganeseFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Frequency multiplier for Manganese distributions </Description>
+                <DisplayName>Manganese Freq.</DisplayName>
+            </OptionNumeric> 
+            
+            <OptionNumeric name='manganeseSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+                <Description> Size multiplier for Manganese distributions </Description>
+                <DisplayName>Manganese Size</DisplayName>
+            </OptionNumeric>
+
+            <MystcraftSymbol name='manganeseClusters' displayName='Manganese Clusters'/>
+       
+        </ConfigSection>        
+        <!-- ********** / Manganese  ********** -->
+
+
+
+        <!-- Menu Options for Additional Ores can go here... -->
+
+        <!--*******************   (Ore)   ***********************-->
+
+
+        <!-- ********** / (Ore)  ********** -->
+
+
+
+
+     </ConfigSection>   
+
+
+    <!--*****************************   Distributions   *************************************
+    *   
+    *   Currently this Metallurgy Mod Config ONLY uses the Cluster (Stanard) Distribution.
+    *
+    *     Vanilla Clusters:
+    *       A re-creation of the vanilla ore generation using the StandardGen algorithm.
+    *
+    *************************************************************************************-->
+
+    <IfCondition condition=':= (dimension.generator = "RandomLevelSource") &amp;
+                            (dimension.id = 0)'>
+	
+        <!--**********   Vanilla Deposit Removal   *************-->
+        <Substitute name='StandardOreSubstitute' block='stone'>
+            <Description> 
+                Replace vanilla-generated ore clusters with stone.   
+            </Description>
+            <Comment>  
+                The global option deferredPopulationRange must be large enough to catch all ore clusters (>= 32).
+            </Comment>
+
+            <Replaces block='900:0'/>	<!--  Copper  -->
+            <Replaces block='900:1'/>	<!--  Tin  --> 
+            <Replaces block='900:2'/>	<!--  Manganese  -->
+
+
+        </Substitute>
+        
+        <!--*******************   Copper   ***********************-->
+        <ConfigSection>
+        
+	  <!-- *****  Standard Cluster  ***** -->
+            <IfCondition condition=':= if(age, age.copperClusters > 0, copperDist = "vanillaStdGen")'>    
+
+                <StandardGen name='CopperStandard' block='900:0' inherits='PresetStandardGen'> 
+                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
+                    <DrawWireframe>:=drawWireframes</DrawWireframe>
+                    <WireframeColor>0x60101010</WireframeColor>
+
+                    <Setting name='Size' avg=':= 0.75 * copperSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 0.6 * copperFreq * if(age,age.copperClusters,1) * _default_'/>
+                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+
+  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
+                    <BiomeType name='.*' weight='1'/>
+                    <Biome name='Hell.*' weight='-1'/>
+
+                </StandardGen>
+
+
+	<!-- More Distribution Types can go here -->
+
+
+            </IfCondition>   
+            
+        </ConfigSection>
+        <!-- ********** / Copper ********** -->
+
+
+        <!--*******************   Tin   ***********************-->
+        <ConfigSection>
+        
+	  <!-- *****  Standard Cluster  ***** -->
+            <IfCondition condition=':= if(age, age.tinClusters > 0, tinDist = "vanillaStdGen")'>    
+
+                <StandardGen name='TinStandard' block='900:1' inherits='PresetStandardGen'> 
+                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
+                    <DrawWireframe>:=drawWireframes</DrawWireframe>
+                    <WireframeColor>0x60101010</WireframeColor>
+
+                    <Setting name='Size' avg=':= 0.875 * tinSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 0.5 * tinFreq * if(age,age.tinClusters,1) * _default_'/>
+                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+
+  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
+                    <BiomeType name='.*' weight='1'/>
+                    <Biome name='Hell.*' weight='-1'/>
+
+                </StandardGen>
+
+
+
+            </IfCondition>   
+            
+        </ConfigSection>
+        <!-- ********** / Tin ********** -->
+
+
+        <!--*******************   Manganese   ***********************-->
+        <ConfigSection>
+        
+	  <!-- *****  Standard Cluster  ***** -->
+            <IfCondition condition=':= if(age, age.manganeseClusters > 0, manganeseDist = "vanillaStdGen")'>    
+
+                <StandardGen name='ManganeseStandard' block='900:2' inherits='PresetStandardGen'> 
+                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
+                    <DrawWireframe>:=drawWireframes</DrawWireframe>
+                    <WireframeColor>0x60101010</WireframeColor>
+
+                    <Setting name='Size' avg=':= 0.5 * manganeseSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 0.25 * manganeseFreq * if(age,age.manganeseClusters,1) * _default_'/>
+                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+
+  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
+                    <BiomeType name='.*' weight='0.65'/>
+                    <Biome name='Extreme.*' weight='0.35'/>
+                    <Biome name='Hills.*' weight='0.35'/>
+                    <Biome name='Cold.*' weight='0.35'/>
+                    <Biome name='Ice.*' weight='0.35'/>
+                    <Biome name='Frozen.*' weight='0.35'/>
+                    <Biome name='Jungle.*' weight='0.35'/>
+                    <Biome name='Forest.*' weight='0.35'/>
+                    <Biome name='Desert.*' weight='0.35'/>
+                    <Biome name='Hell.*' weight='-1'/>
+
+                </StandardGen>
+
+
+		<!-- More Distribution Types can go here -->
+
+
+            </IfCondition>   
+            
+        </ConfigSection>
+        <!-- ********** / Manganese ********** -->
+
+
+
+        <!-- Additional Ores can go here... -->
+
+        <!--*******************   (Ore)   ***********************-->
+
+
+        <!-- ********** / (Ore)  ********** -->
+
+
+
+
+    </IfCondition>
+    
+</ConfigSection>
