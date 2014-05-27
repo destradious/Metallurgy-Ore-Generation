@@ -64,7 +64,7 @@
         <ConfigSection>
         
             <OptionChoice name='shadowironDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
-                <Description> Controls how Deep Iron is generated. </Description>
+                <Description> Controls how Shadow Iron is generated. </Description>
                 <DisplayName>ShadowIron Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
@@ -354,13 +354,13 @@
     *       A re-creation of the vanilla ore generation using the StandardGen algorithm.
     *
     *************************************************************************************-->
-    <IfCondition condition=':= (dimension.generator = "RandomLevelSource") &amp;
-                            (dimension.id = 0)'>
+    <IfCondition condition=':= (dimension.generator = "HellRandomLevelSource") &amp;
+                            (dimension.id = -1)'>
         
         <!--**********   Vanilla Deposit Removal   *************-->
-        <Substitute name='StandardOreSubstitute' block='stone'>
+        <Substitute name='StandardOreSubstitute' block='87'>
             <Description> 
-                Replace vanilla-generated ore clusters with stone.   
+                Replace metallurgy initial generations with netherrack.   
             </Description>
             <Comment>  
                 The global option deferredPopulationRange must be large enough to catch all ore clusters (>= 32).
@@ -372,6 +372,7 @@
             <Replaces block='903:3'/>	<!--  Midasium  -->
             <Replaces block='903:4'/>	<!--  Vyroxeres  -->
             <Replaces block='903:5'/>	<!--  Ceruclase  -->
+            <Replaces block='903:6'/>        <!-- Alduorite (Ghoooost ooooore) -->
             <Replaces block='903:7'/>	<!--  Kalendrite  -->
             <Replaces block='903:8'/>	<!--  Vulcanite  -->
             <Replaces block='903:9'/>	<!--  Sanguinite  -->
@@ -421,9 +422,9 @@
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
 
-                    <Setting name='Size' avg=':= 0.75 * shadowironSize * _default_'/> 
-                    <Setting name='Frequency' avg=':= 0.35 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Size' avg=':= 1.25 * shadowironSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 2.00 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
+                    <Setting name='Height' avg=':= 210/128 * dimension.groundLevel' range=':= 40/128 * dimension.groundLevel'/>
 
   		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
                     <BiomeType name='.*' weight='-0.5'/>
@@ -522,8 +523,7 @@
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 
   		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
+                    <BiomeType name='hell'/>
 
 
                 </StandardGen>
