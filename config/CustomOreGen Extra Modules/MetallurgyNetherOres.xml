@@ -358,7 +358,7 @@
                             (dimension.id = -1)'>
         
         <!--**********   Vanilla Deposit Removal   *************-->
-        <Substitute name='StandardOreSubstitute' block='87'>
+        <Substitute name='StandardOreSubstitute' block='87'>    <!-- NetherRack  -->
             <Description> 
                 Replace metallurgy initial generations with netherrack.   
             </Description>
@@ -372,7 +372,7 @@
             <Replaces block='903:3'/>	<!--  Midasium  -->
             <Replaces block='903:4'/>	<!--  Vyroxeres  -->
             <Replaces block='903:5'/>	<!--  Ceruclase  -->
-            <Replaces block='903:6'/>        <!-- Alduorite (Ghoooost ooooore) -->
+            <Replaces block='903:6'/>	<!--  Aldourite  (Ohhhhhh Ghost Ore.... REMOVED FROM GAME)  -->
             <Replaces block='903:7'/>	<!--  Kalendrite  -->
             <Replaces block='903:8'/>	<!--  Vulcanite  -->
             <Replaces block='903:9'/>	<!--  Sanguinite  -->
@@ -386,7 +386,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.ignatiusClusters > 0, ignatiusDist = "vanillaStdGen")'>    
 
-                <StandardGen name='IgnatiusStandard' block='903:0' inherits='PresetStandardGen'> 
+                <StandardGen name='IgnatiusStandard' block='903:0' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -394,10 +394,6 @@
                     <Setting name='Size' avg=':= 0.75 * ignatiusSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.45 * ignatiusFreq * if(age,age.ignatiusClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
 
                 </StandardGen>
 
@@ -417,7 +413,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.shadowironClusters > 0, shadowironDist = "vanillaStdGen")'>    
 
-                <StandardGen name='ShadowIronStandard' block='903:1' inherits='PresetStandardGen'> 
+                <StandardGen name='ShadowIronStandard' block='903:1' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -425,11 +421,6 @@
                     <Setting name='Size' avg=':= 1.25 * shadowironSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 2.00 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 210/128 * dimension.groundLevel' range=':= 40/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
-
 
                 </StandardGen>
 
@@ -449,7 +440,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.lemuriteClusters > 0, lemuriteDist = "vanillaStdGen")'>    
 
-                <StandardGen name='LemuriteStandard' block='903:2' inherits='PresetStandardGen'> 
+                <StandardGen name='LemuriteStandard' block='903:2' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -457,11 +448,6 @@
                     <Setting name='Size' avg=':= 0.75 * lemuriteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.3 * lemuriteFreq * if(age,age.lemuriteClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
-
 
                 </StandardGen>
 
@@ -481,7 +467,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.midasiumClusters > 0, midasiumDist = "vanillaStdGen")'>    
 
-                <StandardGen name='MidasiumStandard' block='903:3' inherits='PresetStandardGen'> 
+                <StandardGen name='MidasiumStandard' block='903:3' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -489,11 +475,6 @@
                     <Setting name='Size' avg=':= 0.75 * midasiumSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.25 * midasiumFreq * if(age,age.midasiumClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
-
 
                 </StandardGen>
 
@@ -513,7 +494,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.vyroxeresClusters > 0, vyroxeresDist = "vanillaStdGen")'>    
 
-                <StandardGen name='VyroxeresStandard' block='903:4' inherits='PresetStandardGen'> 
+                <StandardGen name='VyroxeresStandard' block='903:4' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -521,10 +502,6 @@
                     <Setting name='Size' avg=':= 0.875 * vyroxeresSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * vyroxeresFreq * if(age,age.vyroxeresClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='hell'/>
-
 
                 </StandardGen>
 
@@ -544,7 +521,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.ceruclaseClusters > 0, ceruclaseDist = "vanillaStdGen")'>    
 
-                <StandardGen name='CeruclaseStandard' block='903:5' inherits='PresetStandardGen'> 
+                <StandardGen name='CeruclaseStandard' block='903:5' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -552,11 +529,6 @@
                     <Setting name='Size' avg=':= 0.5 * ceruclaseSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * ceruclaseFreq * if(age,age.ceruclaseClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
-
 
                 </StandardGen>
 
@@ -576,7 +548,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.kalendriteClusters > 0, kalendriteDist = "vanillaStdGen")'>    
 
-                <StandardGen name='KalendriteStandard' block='903:7' inherits='PresetStandardGen'> 
+                <StandardGen name='KalendriteStandard' block='903:7' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -584,11 +556,6 @@
                     <Setting name='Size' avg=':= 0.375 * kalendriteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * kalendriteFreq * if(age,age.kalendriteClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
-
 
                 </StandardGen>
 
@@ -608,7 +575,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.vulcaniteClusters > 0, vulcaniteDist = "vanillaStdGen")'>    
 
-                <StandardGen name='VulcaniteStandard' block='903:8' inherits='PresetStandardGen'> 
+                <StandardGen name='VulcaniteStandard' block='903:8' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -616,10 +583,6 @@
                     <Setting name='Size' avg=':= 0.25 * vulcaniteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.15 * vulcaniteFreq * if(age,age.vulcaniteClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
 
                 </StandardGen>
 
@@ -639,7 +602,7 @@
 	  <!-- *****  Standard Cluster  ***** -->
             <IfCondition condition=':= if(age, age.sanguiniteClusters > 0, sanguiniteDist = "vanillaStdGen")'>    
 
-                <StandardGen name='SanguiniteStandard' block='903:9' inherits='PresetStandardGen'> 
+                <StandardGen name='SanguiniteStandard' block='903:9' inherits='PresetStandardGen_Nether'> 
                     <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x60101010</WireframeColor>
@@ -647,10 +610,6 @@
                     <Setting name='Size' avg=':= 0.25 * sanguiniteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.15 * sanguiniteFreq * if(age,age.sanguiniteClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
-  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-                    <BiomeType name='.*' weight='-0.5'/>
-                    <BiomeType name='hell' weight='1'/>
 
                 </StandardGen>
 
