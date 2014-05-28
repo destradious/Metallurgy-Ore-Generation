@@ -555,7 +555,7 @@
 
                     <Setting name='Size' avg=':= 0.375 * oureclaseSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * oureclaseFreq * if(age,age.oureclaseClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 72/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 
   		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
                     <BiomeType name='.*' weight='0.5'/>
@@ -653,7 +653,7 @@
 
                     <Setting name='Size' avg=':= 0.375 * mithrilSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.15 * mithrilFreq * if(age,age.mithrilClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 20/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 60/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 
   		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
                     <BiomeType name='.*' weight='0.60'/>
@@ -730,7 +730,7 @@
 
                     <Setting name='Size' avg=':= 0.5 * orichalcumSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.1 * orichalcumFreq * if(age,age.orichalcumClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 30/128 * dimension.groundLevel' range=':= 10/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 24/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 
   		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
                     <BiomeType name='.*' weight='0.5'/>

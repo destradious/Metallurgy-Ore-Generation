@@ -367,6 +367,9 @@
                     <WireframeColor>0x60101010</WireframeColor>
                     <Setting name='Size' avg=':= 2 * coalSize * _default_'/> 
                     <Setting name='Frequency' avg=':= coalFreq * if(age,age.coalClusters,1) * _default_'/>
+		<!--  HEIGHT: Layers 128 to 0  -->
+		<!--  Default Height  -->
+
                 </StandardGen> 
             </IfCondition>   
             
@@ -381,7 +384,8 @@
                     <WireframeColor>0x60101010</WireframeColor>
                     <Setting name='MotherlodeFrequency' avg=':= 10.7 * coalFreq * if(age,age.coalVeins,1) * _default_'/>
                     <Setting name='MotherlodeSize' avg=':= coalSize * _default_' range=':= coalSize * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 60/64 * dimension.groundLevel' range=':= 10/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 70 to 46  -->
+                    <Setting name='MotherlodeHeight' avg=':= 120/128 * dimension.groundLevel' range=':= 20/128 * dimension.groundLevel'/>
                     <Setting name='BranchLength' avg=':= 0.45 * _default_' range=':= 0.45 * _default_'/>
                     <Setting name='BranchInclination' avg='0' range='0.35'/>
                     <Setting name='BranchHeightLimit' avg='10'/>
@@ -392,7 +396,8 @@
                 <Veins name='CoalVeinsHills' inherits='CoalVeins'>
                     <Description>  Adds Coal to spawn between heights 100 and 64 (up into mountains/hills). </Description>      
                     <Setting name='MotherlodeFrequency' avg=':= _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 84/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 100 to 64  -->
+                    <Setting name='MotherlodeHeight' avg=':= 168/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
                     <Setting name='BranchHeightLimit' avg=':= _default_'/>  
                     <BiomeType name='Hills.*'/>
                     <BiomeType name='Extreme.*'/>
@@ -401,6 +406,7 @@
                 <Veins name='CoalVeinsSwamp' inherits='CoalVeins'>
                     <Description>  This roughly triples the chance of finding coal in a swamp. </Description>      
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
+		<!--  HEIGHT: Layers 80 to 36  -->
                     <Setting name='MotherlodeHeight' avg=':= _default_' range=':= 2 * _default_'/>
                     <Setting name='BranchHeightLimit' avg=':= 2 * _default_'/>  
                     <BiomeType name='Swamp'/>
@@ -440,10 +446,12 @@
                     <WireframeColor>0x40221100</WireframeColor> 
                     <Setting name='Size' avg=':= ironSize * _default_'/> 
                     <Setting name='Frequency' avg=':= ironFreq * if(age,age.ironClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/> 
+		<!--  HEIGHT: Layers 53 to 27  -->
+                    <Setting name='Height' avg=':= 84/128 * dimension.groundLevel' range=':= 22/128 * dimension.groundLevel'/> 
                 </StandardGen> 
             </IfCondition>
                 
+
             <IfCondition condition=':= if(age, age.ironVeins > 0, ironDist = "layeredVeins")'>
                 <Veins name='IronVeins' block='oreIron' inherits='PresetLayeredVeins'>
                     <Description> 
@@ -453,16 +461,18 @@
                     <WireframeColor>0x40221100</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 0.9 * ironFreq * if(age,age.ironVeins,1) * _default_'/>
                     <Setting name='MotherlodeSize' avg=':= ironSize * _default_' range=':= ironSize * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 43/64 * dimension.groundLevel' range=':= 11/64 * dimension.groundLevel' type='normal'/>
-                    <Setting name='BranchHeightLimit' avg='10.5'/>
+		<!--  HEIGHT: Layers 54 to 28  -->
+                    <Setting name='MotherlodeHeight' avg=':= 86/128 * dimension.groundLevel' range=':= 22/128 * dimension.groundLevel' type='normal'/>
+                    <Setting name='BranchHeightLimit' avg='22'/>
                     <Setting name='SegmentRadius' avg=':= ironSize * _default_' range=':= ironSize * _default_'/>
                 </Veins>
 
                 <Veins name='IronVeinsHills' inherits='IronVeins'>
                     <Description>  Adds Iron to spawn between heights 100 and 64 (up into mountains/hills), but half as much. </Description>      
                     <Setting name='MotherlodeFrequency' avg=':= 0.5 * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 84/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
-                    <Setting name='BranchHeightLimit' avg=':= 0.5 * _default_'/>  
+		<!--  HEIGHT: Layers 100 to 64  -->
+                    <Setting name='MotherlodeHeight' avg=':= 168/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
+                    <Setting name='BranchHeightLimit' avg=':= 0.6 * _default_'/>  
                     <BiomeType name='Hills.*'/>
                     <BiomeType name='Extreme.*'/>
                 </Veins>      
@@ -470,6 +480,7 @@
                 <Veins name='IronVeinsCold' inherits='IronVeins'>
                     <Description> This roughly triples the chance of finding iron in cold/icy biomes. </Description> 
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
+		<!--  HEIGHT: Layers 64 to 16  -->
                     <Setting name='MotherlodeHeight' avg=':=_default_' range=':= 2 * _default_'/>
                     <Setting name='BranchHeightLimit' avg=':= 2 * _default_'/>  
                     <BiomeType name='Frozen'/>
@@ -511,7 +522,8 @@
                     <WireframeColor>0x40443300</WireframeColor> 
                     <Setting name='Size' avg=':= goldSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.1 * goldFreq * if(age,age.goldClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 16/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 32 to 0  -->
+                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
                 </StandardGen> 
             </IfCondition>
                 
@@ -525,20 +537,24 @@
                     <WireframeColor>0x40443300</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 0.85 * goldFreq * if(age,age.goldVeins,1) * _default_'/>
                     <Setting name='MotherlodeSize' avg=':= 0.8 * goldSize * _default_' range=':= 0.5 * goldSize * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 20/64 * dimension.groundLevel' range=':= 10/64 * dimension.groundLevel' type='normal'/>
-                    <Setting name='BranchHeightLimit' avg='10'/>  
+		<!--  HEIGHT: Layers 32 to 0  -->
+                    <Setting name='MotherlodeHeight' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel' type='normal'/>
+                    <Setting name='BranchHeightLimit' avg='32'/>  
                     <Setting name='BranchFrequency' avg=':= 0.85 * _default_'/> 
                     <Setting name='BranchLength' avg=':= 0.75 * _default_' range=':= 0.66 * _default_'/>
                     <Setting name='SegmentRadius' avg=':= 0.7 * goldSize * _default_' range=':= 0.5 * goldSize * _default_'/>
                     <Setting name='SegmentAngle' avg='0.6' range='0.40' /> 
                 </Veins>
+
                 <Veins name='GoldVeinsForest' inherits='GoldVeins'>
                     <Description> This roughly triples the chance of finding gold in forested biomes. </Description> 
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
+		<!--  HEIGHT: Layers 48 to 0  -->
                     <Setting name='MotherlodeHeight' avg=':=_default_' range=':= 2 * _default_'/>
                     <Setting name='BranchHeightLimit' avg=':= 2 * _default_'/>  
                     <BiomeType name='Forest'/>    
                 </Veins>
+
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.goldClouds > 0, goldDist = "strategicClouds")'>
@@ -575,7 +591,8 @@
                     <WireframeColor>0x40550000</WireframeColor> 
                     <Setting name='Size' avg=':= 7/8 * redstoneSize * _default_'/>
                     <Setting name='Frequency' avg=':= 0.4 * redstoneFreq * if(age,age.redstoneClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 8/64 * dimension.groundLevel' range=':= 8/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 16 to 0  -->
+                    <Setting name='Height' avg=':= 16/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel'/>
                 </StandardGen>
             </IfCondition>
                 
@@ -589,7 +606,11 @@
                     <WireframeColor>0x40550000</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 1.3 * redstoneFreq * if(age,age.redstoneVeins,1) * _default_'/>
                     <Setting name='SegmentRadius' avg=':= redstoneSize * _default_' range=':= redstoneSize * _default_'/>
+		<!--  HEIGHT: Layers 128 to 0  -->
+		<!--  Uses a unique Vein layout (Vertical, instead of horizontal), so Height is anywhere between 128 and 0  -->
+
                 </Veins>
+
                 <Veins name='RedstoneVeinsDesert' inherits='RedstoneVeins'> 
                     <Description> This roughly triples the chance of finding redstone in deserts. </Description> 
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/> 
@@ -597,6 +618,7 @@
                     <Replaces block='sandstone'/> 
                     <BiomeType name='Desert'/>    
                 </Veins>
+
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.redstoneClouds > 0, redstoneDist = "strategicClouds")'>
@@ -634,21 +656,26 @@
                     <WireframeColor>0x40336699</WireframeColor> 
                     <Setting name='Size' avg=':= 7/8 * diamondSize * _default_'/>
                     <Setting name='Frequency' avg=':= 1/20 * diamondFreq * if(age,age.diamondClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 8/64 * dimension.groundLevel' range=':= 8/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 16 to 0  -->
+                    <Setting name='Height' avg=':= 16/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel'/>
                 </StandardGen>
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.diamondVeins > 0, diamondDist = "layeredVeins")'>
+
                 <Veins name="DiamondVeins" block='oreDiamond' inherits='PresetPipeVeins' seed='0xF186'>
                     <Description> Short sparsely filled tubes starting at bedrock. </Description>
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x40336699</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 0.8 * diamondFreq * if(age,age.diamondVeins,1) * _default_'/> 
-                    <Setting name='MotherlodeHeight' avg=':= 3/64 * dimension.groundLevel' range='0'/>
+		<!--  HEIGHT: Layers 16? to 0  -->
+		<!--  Uses Special Lava-Pipe Vein Distribution, so Height is really weird  -->
+                    <Setting name='MotherlodeHeight' avg=':= 6/128 * dimension.groundLevel' range='0'/>
                     <Setting name='MotherlodeSize' avg=':= diamondSize * _default_' range=':= diamondSize * _default_'/>
                     <Setting name='SegmentRadius' avg=':= diamondSize * _default_' range=':= diamondSize * _default_'/>
                     <Setting name='OreDensity' avg=':= 1.0 * _default_'/>
                 </Veins>
+
                 <Veins name="DiamondVeinsLava" block='10' inherits='DiamondVeins' seed='0xF186'>
                     <Description> Fills center of each tube with lava, forming "kimberlite pipes" </Description>
                     <Setting name='MotherlodeSize' avg=':= 0.5 * _default_'/>
@@ -659,6 +686,7 @@
                     <Replaces block='gravel'/>
                     <Replaces block='oreDiamond'/>
                 </Veins>
+
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.diamondClouds > 0, diamondDist = "strategicClouds")'>
@@ -688,11 +716,13 @@
                     <WireframeColor>0x40000055</WireframeColor> 
                     <Setting name='Size' avg=':= 6/8 * lapisSize * _default_'/>
                     <Setting name='Frequency' avg=':= 0.05 * lapisFreq * if(age,age.lapisClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 16/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel' type='normal'/>
+		<!--  HEIGHT: Layers 32 to 0  -->
+                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel' type='normal'/>
                 </StandardGen>
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.lapisVeins > 0, lapisDist = "layeredVeins")'>
+
                 <Veins name='LapisLazuliVeins' block='oreLapis' inherits='PresetVerticalVeins'>         
                     <Description> 
                         Lapis Lazuli spawns in isolated veins that run vertically upward, much like redstone.  However,
@@ -701,11 +731,13 @@
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x40000055</WireframeColor> 
                     <Setting name='MotherlodeFrequency' avg=':= 0.4 * lapisFreq * if(age,age.lapisVeins,1) * _default_'/>
-                    <Setting name='MotherlodeHeight' avg=':= 8/64 * dimension.groundLevel' range='4'/>
+		<!--  HEIGHT: Layers 40 to 0   (Range is Height * 4)  -->
+                    <Setting name='MotherlodeHeight' avg=':= 16/128 * dimension.groundLevel' range='4'/>
                     <Setting name='BranchLength' avg=':= 36/64 * dimension.groundLevel' range='12' type='normal'/>
                     <Setting name='BranchInclination' avg=':= -_default_' range=':=_default_'/>     
                     <Setting name='SegmentRadius' avg=':= lapisSize * _default_' range=':= lapisSize * _default_'/>          
                 </Veins> 
+
                 <Veins name='LapisLazuliVeinsOcean' inherits='LapisLazuliVeins'>
                     <Description> This roughly triples the chance of finding lapis lazuli under oceans. </Description> 
                     <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
@@ -715,6 +747,7 @@
                     <BiomeType name='Water'/>
                     <Biome name='River' weight='-1'/>
                 </Veins>
+
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.lapisClouds > 0, lapisDist = "strategicClouds")'>
@@ -749,9 +782,13 @@
                     <Setting name='Size' avg=':= 2/8 * emeraldSize * _default_'/>
                     <Setting name='Frequency' avg=':= 6/20 * emeraldFreq * if(age,age.emeraldClusters,1) * _default_' 
                                               range=':= 2 * emeraldFreq * if(age,age.emeraldClusters,1)'/>
-                    <Setting name='Height' avg=':= 18/64 * dimension.groundLevel' range=':= 14/64 * dimension.groundLevel'/>
-                    <BiomeType name='Mountain'/>
-                    <Biome name='Green\s*Hills'/> <Comment> ExtraBiomesXL </Comment>
+		<!--  HEIGHT: Layers 42 to 0  -->
+                    <Setting name='Height' avg=':= 42/128* dimension.groundLevel' range=':= 42/128 * dimension.groundLevel'/>
+
+		<!--  ONLY in Specific Biomes!!!  -->
+                    <BiomeType name='Mountain.*'/>
+                    <BiomeType name='Hill.*'/>
+                    <BiomeType name='Extreme.*'/>
                 </StandardGen>   
             </IfCondition>         
                 
@@ -761,15 +798,20 @@
                     <DrawWireframe>:=drawWireframes</DrawWireframe>
                     <WireframeColor>0x40339966</WireframeColor>
                     <Setting name='MotherlodeFrequency' avg=':= 0.9 * emeraldFreq * if(age,age.emeraldVeins,1) * _default_'/> 
-                    <Setting name='MotherlodeHeight' avg=':= 10/64 * dimension.groundLevel' range=':= 4/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 32 to 0  -->
+                    <Setting name='MotherlodeHeight' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
                     <Setting name='MotherlodeSize' avg=':= 0.85 * emeraldSize * _default_' range=':= 0.7 * emeraldSize * _default_'/>
                     <Setting name='BranchInclination' avg='0.55' range='0.7' type='normal'/>
                     <Setting name='SegmentRadius' avg=':= 0.85 * emeraldSize * _default_' range=':= 0.7 * emeraldSize * _default_'/>
                     <Setting name='OreDensity' avg=':= 1.2 * _default_'/>
                     <Biome name='.*' weight='0.20'/>
-                    <BiomeType name='Mountain'/>
-                    <Biome name='Green\s*Hills'/> <Comment> ExtraBiomesXL </Comment>
+
+		<!--  ONLY in Specific Biomes!!!  -->
+                    <BiomeType name='Mountain.*'/>
+                    <BiomeType name='Hill.*'/>
+                    <BiomeType name='Extreme.*'/>
                 </Veins>
+
                 <Veins name="EmeraldVeinsSilverfish" block='monsterStoneEgg' inherits='EmeraldVeins' seed='0x3966'>
                     <Description> 
                         Fill center of tubes with silverfish spawners. 
@@ -781,6 +823,7 @@
                     <Replaces block='stone'/>
                     <Replaces block='oreEmerald'/>
                 </Veins>
+
             </IfCondition>
                 
             <IfCondition condition=':= if(age, age.emeraldClouds > 0, emeraldDist = "strategicClouds")'>
@@ -798,7 +841,6 @@
                     <Setting name='OreDensity' avg=':= 0.4 * _default_'/> 
                     <Setting name='OreVolumeNoiseCutoff' avg='0'/>   
                     <BiomeType name='Mountain'/>
-                    <Biome name='Green\s*Hills'/> <Comment> ExtraBiomesXL </Comment>
                 </Cloud>
             </IfCondition>
             
