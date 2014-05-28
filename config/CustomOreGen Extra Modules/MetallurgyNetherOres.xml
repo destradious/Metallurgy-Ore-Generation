@@ -273,7 +273,7 @@
             
             <OptionNumeric name='alduoriteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
                 <Description> Size multiplier for alduorite distributions. </Description>
-                <DisplayName>Alduotire Size</DisplayName>
+                <DisplayName>Alduorite Size</DisplayName>
             </OptionNumeric>
 
             <MystcraftSymbol name='alduoriteClusters' displayName='Alduorite Clusters'/>
@@ -611,7 +611,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * alduoriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.75 * alduoriteFreq * if(age,age.alduoriteClusters,1) * _default_'/>
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 112/128 * dimension.groundLevel' range=':= 112/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
 	
