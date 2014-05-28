@@ -392,7 +392,7 @@
                     <WireframeColor>0x60101010</WireframeColor>
 
                     <Setting name='Size' avg=':= 0.75 * ignatiusSize * _default_'/> 
-                    <Setting name='Frequency' avg=':= 0.45 * ignatiusFreq * if(age,age.ignatiusClusters,1) * _default_'/>
+                    <Setting name='Frequency' avg=':= 0.75 * ignatiusFreq * if(age,age.ignatiusClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 
                 </StandardGen>
@@ -419,7 +419,7 @@
                     <WireframeColor>0x60101010</WireframeColor>
 
                     <Setting name='Size' avg=':= 1.25 * shadowironSize * _default_'/> 
-                    <Setting name='Frequency' avg=':= 2.00 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
+                    <Setting name='Frequency' avg=':= 1.20 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
                     <Setting name='Height' avg=':= 210/128 * dimension.groundLevel' range=':= 40/128 * dimension.groundLevel'/>
 
                 </StandardGen>
@@ -474,7 +474,7 @@
 
                     <Setting name='Size' avg=':= 0.75 * midasiumSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.25 * midasiumFreq * if(age,age.midasiumClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 80/128 * dimension.groundLevel' range=':= 80/128 * dimension.groundLevel'/>
 
                 </StandardGen>
 
@@ -528,7 +528,7 @@
 
                     <Setting name='Size' avg=':= 0.5 * ceruclaseSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * ceruclaseFreq * if(age,age.ceruclaseClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 96/128 * dimension.groundLevel' range=':= 96/128 * dimension.groundLevel'/>
 
                 </StandardGen>
 
@@ -555,7 +555,7 @@
 
                     <Setting name='Size' avg=':= 0.375 * kalendriteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.2 * kalendriteFreq * if(age,age.kalendriteClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 64/128 * dimension.groundLevel'/>
 
                 </StandardGen>
 
@@ -582,7 +582,7 @@
 
                     <Setting name='Size' avg=':= 0.25 * vulcaniteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.15 * vulcaniteFreq * if(age,age.vulcaniteClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel'/>
 
                 </StandardGen>
 
@@ -609,7 +609,7 @@
 
                     <Setting name='Size' avg=':= 0.25 * sanguiniteSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.15 * sanguiniteFreq * if(age,age.sanguiniteClusters,1) * _default_'/>
-                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 
                 </StandardGen>
 
