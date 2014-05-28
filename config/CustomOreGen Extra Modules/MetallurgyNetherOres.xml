@@ -248,6 +248,39 @@
         </ConfigSection>        
         <!-- ********** / Ceruclase  ********** -->
 
+        <!-- **********  Alduorite  ********** -->
+        <ConfigSection>
+        
+            <OptionChoice name='AlduoriteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+                <Description> Controls how alduorite is generated. </Description>
+                <DisplayName>Alduorite Type</DisplayName>
+
+                <Choice value='vanillaStdGen' displayValue='Clusters'>
+                    <Description> 
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
+                    </Description>
+                </Choice>
+
+                <Choice value='none' displayValue='None' description='No alduorite is generated at all.'/>
+
+            </OptionChoice>
+
+            
+            <OptionNumeric name='alduoriteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+                <Description> Frequency multiplier for alduorite distributions. </Description>
+                <DisplayName>Alduorite Freq.</DisplayName>
+            </OptionNumeric> 
+            
+            <OptionNumeric name='alduoriteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+                <Description> Size multiplier for alduorite distributions. </Description>
+                <DisplayName>Alduotire Size</DisplayName>
+            </OptionNumeric>
+
+            <MystcraftSymbol name='alduoriteClusters' displayName='Alduorite Clusters'/>
+       
+        </ConfigSection>        
+        <!-- ********** / Alduorite  ********** -->
+
 
         <!--*******************   Kalendrite   ***********************-->
         <ConfigSection>
@@ -564,6 +597,32 @@
 	            
 	        </ConfigSection>
 	        <!-- ********** / Ceruclase ********** -->
+
+	        <!--*******************   Alduorite   ***********************-->
+	        <ConfigSection>
+	        
+		  <!-- *****  Standard Cluster  ***** -->
+	            <IfCondition condition=':= if(age, age.alduoriteClusters > 0, alduoriteDist = "vanillaStdGen")'>    
+	
+	                <StandardGen name='AlduoriteStandard' block='903:6' inherits='PresetStandardGen_Nether'> 
+	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
+	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
+	                    <WireframeColor>0x60101010</WireframeColor>
+	
+	                    <Setting name='Size' avg=':= 0.75 * alduoriteSize * _default_'/> 
+	                    <Setting name='Frequency' avg=':= 0.75 * alduoriteFreq * if(age,age.alduoriteClusters,1) * _default_'/>
+	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	
+	                </StandardGen>
+	
+	
+			<!-- More Distribution Types can go here -->
+	
+	
+	            </IfCondition>   
+	            
+	        </ConfigSection>
+	        <!-- ********** / Alduorite ********** -->
 	
 	
 	        <!--*******************   Kalendrite   ***********************-->
