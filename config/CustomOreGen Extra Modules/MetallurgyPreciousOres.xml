@@ -19,28 +19,37 @@
     *************************************************************************************-->
     <ConfigSection>
     
-        <OptionDisplayGroup name='groupMetallurgyPreciousOres' displayName='Metallurgy Precious Ores' displayState='shown'>
+        <OptionDisplayGroup name='groupMetallurgyPreciousOres' displayName='[Precious Ores]' displayState='shown'>
             <Description> 
                 Distribution options for the Metallurgy Precious Ores  (Zinc, Tin, Platinum).
             </Description>
         </OptionDisplayGroup>
 
 
-
 	<ConfigSection>
-		<OptionChoice name='AllMetPreciousOre' default='AllMetPreciousOre_On' displayState='shown' displayGroup='groupMetallurgyPreciousOres'>
+
+		<OptionChoice name='AllMetPreciousOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyPreciousOres'>
 			<Description> Turns Metallurgy Precious Ore generation On or Off </Description>
 			<DisplayName>Metallurgy Precious Ores</DisplayName>
 
-			<Choice value='AllMetPreciousOre_On' displayValue='ON'>
+			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Precious Ores WILL be Generated. You can still customize each Ore individually below. </Description>
 			</Choice>
-
-			<Choice value='AllMetPreciousOre_Off' displayValue='OFF'>
-				<Description> Metallurgy Precious Ores will NOT be generated at all. </Description>
+			<Choice value='false' displayValue='OFF'>
+				<Description> Metallurgy Precious Ores will NOT be generated. </Description>
 			</Choice>
 			
 		</OptionChoice>
+
+		<OptionChoice name='MetPreciousGenDetailed' default='false' displayGroup='groupMetallurgyPreciousOres'>
+		         <DisplayState>:= if(?AllMetPreciousOre,"shown_dynamic","hidden")</DisplayState>	<!--  Extra Details Option Visible?  -->
+			<Description> Turns on extra detailed customizations. </Description>
+			<DisplayName>Full Customization?</DisplayName>
+
+			<Choice value='true' displayValue='ON'></Choice>
+			<Choice value='false' displayValue='OFF'></Choice>
+		</OptionChoice>
+
 	</ConfigSection>
 
 
@@ -48,7 +57,8 @@
         <!--*******************   Zinc   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='zincDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionChoice name='zincDist' default='vanillaStdGen' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?AllMetPreciousOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Zinc is generated. </Description>
                 <DisplayName>Zinc Type</DisplayName>
 
@@ -57,18 +67,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No zinc is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Zinc is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='zincFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='zincFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Zinc distributions </Description>
                 <DisplayName>Zinc Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='zincSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='zincSize' default='1'  min='0' max='5' displayState='shown' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Zinc distributions </Description>
                 <DisplayName>Zinc Size</DisplayName>
             </OptionNumeric>
@@ -82,7 +93,8 @@
         <!--*******************   Silver   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='silverDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionChoice name='silverDist' default='vanillaStdGen' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?AllMetPreciousOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Silver is generated. </Description>
                 <DisplayName>Silver Type</DisplayName>
 
@@ -91,18 +103,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No silver is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Silver is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='silverFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='silverFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Silver distributions </Description>
                 <DisplayName>Silver Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='silverSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='silverSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Silver distributions </Description>
                 <DisplayName>Silver Size</DisplayName>
             </OptionNumeric>
@@ -116,7 +129,8 @@
         <!--*******************   Platinum   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='platinumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionChoice name='platinumDist' default='vanillaStdGen' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?AllMetPreciousOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Platinum is generated. </Description>
                 <DisplayName>Platinum Type</DisplayName>
 
@@ -125,18 +139,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No platinum is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Platinum is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='platinumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='platinumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Platinum distributions </Description>
                 <DisplayName>Platinum Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='platinumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyPreciousOres'>
+            <OptionNumeric name='platinumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyPreciousOres'>
+	       <DisplayState>:= if(?MetPreciousGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Platinum distributions </Description>
                 <DisplayName>Platinum Size</DisplayName>
             </OptionNumeric>
@@ -191,7 +206,7 @@
         
 
 
-	<IfCondition condition=':= AllMetPreciousOre="AllMetPreciousOre_On"'>
+	<IfCondition condition=':= AllMetPreciousOre="true"'>
 		
 	
 	        <!--*******************   Zinc   ***********************-->

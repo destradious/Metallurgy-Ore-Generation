@@ -19,28 +19,37 @@
     *************************************************************************************-->
     <ConfigSection>
     
-        <OptionDisplayGroup name='groupMetallurgyBaseOres' displayName='Met. Base Ores' displayState='shown'>
+        <OptionDisplayGroup name='groupMetallurgyBaseOres' displayName='[Base Ores]' displayState='shown'>
             <Description> 
                 Distribution options for the Metallurgy Base Ores  (Copper, Tin, Manganese).
             </Description>
         </OptionDisplayGroup>
 
 
-
 	<ConfigSection>
-		<OptionChoice name='AllMetBaseOre' default='AllMetBaseOre_On' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+
+		<OptionChoice name='AllMetBaseOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyBaseOres'>
 			<Description> Turns Metallurgy Base Ore generation On or Off </Description>
 			<DisplayName>Metallurgy Base Ores</DisplayName>
 
-			<Choice value='AllMetBaseOre_On' displayValue='ON'>
+			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Base Ores WILL be Generated. You can still customize each Ore individually below. </Description>
 			</Choice>
-
-			<Choice value='AllMetBaseOre_Off' displayValue='OFF'>
-				<Description> Metallurgy Base Ores will NOT be generated at all. </Description>
+			<Choice value='false' displayValue='OFF'>
+				<Description> Metallurgy Base Ores will NOT be generated. </Description>
 			</Choice>
 			
 		</OptionChoice>
+
+		<OptionChoice name='MetBaseGenDetailed' default='false' displayGroup='groupMetallurgyBaseOres'>
+		         <DisplayState>:= if(?AllMetBaseOre,"shown_dynamic","hidden")</DisplayState>	<!--  Extra Details Option Visible?  -->
+			<Description> Turns on extra detailed customizations. </Description>
+			<DisplayName>Full Customization?</DisplayName>
+
+			<Choice value='true' displayValue='ON'></Choice>
+			<Choice value='false' displayValue='OFF'></Choice>
+		</OptionChoice>
+
 	</ConfigSection>
 
 
@@ -48,7 +57,8 @@
         <!--*******************   Copper   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='copperDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+            <OptionChoice name='copperDist' default='vanillaStdGen' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?AllMetBaseOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Copper is generated. </Description>
                 <DisplayName>Copper Type</DisplayName>
 
@@ -57,18 +67,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No copper is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Copper is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='copperFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='copperFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Copper distributions </Description>
                 <DisplayName>Copper Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='copperSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='copperSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Copper distributions </Description>
                 <DisplayName>Copper Size</DisplayName>
             </OptionNumeric>
@@ -82,7 +93,8 @@
         <!--*******************   Tin   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='tinDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+            <OptionChoice name='tinDist' default='vanillaStdGen' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?AllMetBaseOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Tin is generated. </Description>
                 <DisplayName>Tin Type</DisplayName>
 
@@ -91,18 +103,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No tin is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Tin is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='tinFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='tinFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Tin distributions </Description>
                 <DisplayName>Tin Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='tinSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='tinSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Tin distributions </Description>
                 <DisplayName>Tin Size</DisplayName>
             </OptionNumeric>
@@ -116,7 +129,8 @@
         <!--*******************   Manganese   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='manganeseDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyBaseOres'>
+            <OptionChoice name='manganeseDist' default='vanillaStdGen' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?AllMetBaseOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Manganese is generated. </Description>
                 <DisplayName>Manganese Type</DisplayName>
 
@@ -125,18 +139,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No manganese is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Manganese is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='manganeseFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='manganeseFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Manganese distributions </Description>
                 <DisplayName>Manganese Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='manganeseSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyBaseOres'>
+            <OptionNumeric name='manganeseSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyBaseOres'>
+	       <DisplayState>:= if(?MetBaseGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Manganese distributions </Description>
                 <DisplayName>Manganese Size</DisplayName>
             </OptionNumeric>
@@ -190,7 +205,7 @@
         </Substitute>
 
 
-	<IfCondition condition=':= AllMetBaseOre="AllMetBaseOre_On"'>
+	<IfCondition condition=':= AllMetBaseOre="true"'>
 		
 	        
 	        <!--*******************   Copper   ***********************-->

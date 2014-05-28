@@ -19,28 +19,37 @@
     *************************************************************************************-->
     <ConfigSection>
     
-        <OptionDisplayGroup name='groupMetallurgyNetherOres' displayName='Metallurgy Nether Ores' displayState='shown'>
+        <OptionDisplayGroup name='groupMetallurgyNetherOres' displayName='[Nether Ores]' displayState='shown'>
             <Description> 
                 Distribution options for the Metallurgy Fantasy Ores  (Ignatius, Shadow Iron, Lemurite, Midasium, Vyroxeres, Ceruclase, Kalendrite, Vulcanite, Sanguinite).
             </Description>
         </OptionDisplayGroup>
 
 
-
 	<ConfigSection>
-		<OptionChoice name='AllMetNetherOre' default='AllMetNetherOre_On' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+
+		<OptionChoice name='AllMetNetherOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyNetherOres'>
 			<Description> Turns Metallurgy Nether Ore generation On or Off </Description>
 			<DisplayName>Metallurgy Nether Ores</DisplayName>
 
-			<Choice value='AllMetNetherOre_On' displayValue='ON'>
+			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Nether Ores WILL be Generated. You can still customize each Ore individually below. </Description>
 			</Choice>
-
-			<Choice value='AllMetNetherOre_Off' displayValue='OFF'>
-				<Description> Metallurgy Nether Ores will NOT be generated at all. </Description>
+			<Choice value='false' displayValue='OFF'>
+				<Description> Metallurgy Nether Ores will NOT be generated. </Description>
 			</Choice>
-			
+
 		</OptionChoice>
+
+		<OptionChoice name='MetNetherGenDetailed' default='false' displayGroup='groupMetallurgyNetherOres'>
+		         <DisplayState>:= if(?AllMetNetherOre,"shown_dynamic","hidden")</DisplayState>	<!--  Extra Details Option Visible?  -->
+			<Description> Turns on extra detailed customizations. </Description>
+			<DisplayName>Full Customization?</DisplayName>
+
+			<Choice value='true' displayValue='ON'></Choice>
+			<Choice value='false' displayValue='OFF'></Choice>
+		</OptionChoice>
+
 	</ConfigSection>
 
 
@@ -48,7 +57,8 @@
         <!--*******************   Ignatius   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='ignatiusDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='ignatiusDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Ignatius is generated. </Description>
                 <DisplayName>Ignatius Type</DisplayName>
 
@@ -57,18 +67,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No ignatius is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Ignatius is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='ignatiusFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='ignatiusFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Ignatius distributions. </Description>
                 <DisplayName>Ignatius Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='ignatiusSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='ignatiusSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Ignatius distributions. </Description>
                 <DisplayName>Ignatius Size</DisplayName>
             </OptionNumeric>
@@ -79,10 +90,11 @@
         <!-- ********** / Ignatius  ********** -->
 
 
-        <!--*******************   ShadowIron   ***********************-->
+        <!--*******************   Shadow Iron   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='shadowironDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='shadowironDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Shadow Iron is generated. </Description>
                 <DisplayName>ShadowIron Type</DisplayName>
 
@@ -91,23 +103,24 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No shadowiron is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Shadow Iron is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='shadowironFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='shadowironFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Shadow Iron distributions. </Description>
                 <DisplayName>ShadowIron Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='shadowironSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='shadowironSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Shadow Iron distributions. </Description>
                 <DisplayName>ShadowIron Size</DisplayName>
             </OptionNumeric>
 
-            <MystcraftSymbol name='shadowironClusters' displayName='ShadowIron Clusters'/>
+            <MystcraftSymbol name='shadowironClusters' displayName='Shadow Iron Clusters'/>
        
         </ConfigSection>        
         <!-- ********** / ShadowIron  ********** -->
@@ -116,7 +129,8 @@
         <!--*******************   Lemurite   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='lemuriteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='lemuriteDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Lemurite is generated. </Description>
                 <DisplayName>Lemurite Type</DisplayName>
 
@@ -125,18 +139,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No lemurite is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Lemurite is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='lemuriteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='lemuriteFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Lemurite distributions. </Description>
                 <DisplayName>Lemurite Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='lemuriteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='lemuriteSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Lemurite distributions. </Description>
                 <DisplayName>Lemurite Size</DisplayName>
             </OptionNumeric>
@@ -150,7 +165,8 @@
         <!--*******************   Midasium   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='midasiumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='midasiumDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Midasium is generated. </Description>
                 <DisplayName>Midasium Type</DisplayName>
 
@@ -159,18 +175,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No midasium is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Midasium is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='midasiumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='midasiumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Midasium distributions. </Description>
                 <DisplayName>Midasium Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='midasiumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='midasiumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Midasium distributions. </Description>
                 <DisplayName>Midasium Size</DisplayName>
             </OptionNumeric>
@@ -184,7 +201,8 @@
         <!--*******************   Vyroxeres   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='vyroxeresDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='vyroxeresDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Vyroxeres is generated. </Description>
                 <DisplayName>Vyroxeres Type</DisplayName>
 
@@ -193,18 +211,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No vyroxeres is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Vyroxeres is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='vyroxeresFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='vyroxeresFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Vyroxeres distributions. </Description>
                 <DisplayName>Vyroxeres Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='vyroxeresSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='vyroxeresSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Vyroxeres distributions. </Description>
                 <DisplayName>Vyroxeres Size</DisplayName>
             </OptionNumeric>
@@ -218,7 +237,8 @@
         <!--*******************   Ceruclase   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='ceruclaseDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='ceruclaseDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Ceruclase is generated. </Description>
                 <DisplayName>Ceruclase Type</DisplayName>
 
@@ -227,18 +247,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No ceruclase is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Ceruclase is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='ceruclaseFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='ceruclaseFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Ceruclase distributions. </Description>
                 <DisplayName>Ceruclase Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='ceruclaseSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='ceruclaseSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Ceruclase distributions. </Description>
                 <DisplayName>Ceruclase Size</DisplayName>
             </OptionNumeric>
@@ -248,11 +269,13 @@
         </ConfigSection>        
         <!-- ********** / Ceruclase  ********** -->
 
-        <!-- **********  Alduorite  ********** -->
+
+        <!--*******************   Alduorite   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='AlduoriteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
-                <Description> Controls how alduorite is generated. </Description>
+            <OptionChoice name='alduoriteDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
+                <Description> Controls how Alduorite is generated. </Description>
                 <DisplayName>Alduorite Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
@@ -260,19 +283,20 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No alduorite is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Alduorite is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='alduoriteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
-                <Description> Frequency multiplier for alduorite distributions. </Description>
+            <OptionNumeric name='alduoriteFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
+                <Description> Frequency multiplier for Alduorite distributions. </Description>
                 <DisplayName>Alduorite Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='alduoriteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
-                <Description> Size multiplier for alduorite distributions. </Description>
+            <OptionNumeric name='alduoriteSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
+                <Description> Size multiplier for Alduorite distributions. </Description>
                 <DisplayName>Alduorite Size</DisplayName>
             </OptionNumeric>
 
@@ -285,7 +309,8 @@
         <!--*******************   Kalendrite   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='kalendriteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='kalendriteDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Kalendrite is generated. </Description>
                 <DisplayName>Kalendrite Type</DisplayName>
 
@@ -294,18 +319,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No kalendrite is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Kalendrite is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='kalendriteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='kalendriteFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Kalendrite distributions. </Description>
                 <DisplayName>Kalendrite Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='kalendriteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='kalendriteSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Kalendrite distributions. </Description>
                 <DisplayName>Kalendrite Size</DisplayName>
             </OptionNumeric>
@@ -319,7 +345,8 @@
         <!--*******************   Vulcanite   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='vulcaniteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='vulcaniteDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Vulcanite is generated. </Description>
                 <DisplayName>Vulcanite Type</DisplayName>
 
@@ -328,18 +355,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No vulcanite is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Vulcanite is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='vulcaniteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='vulcaniteFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Vulcanite distributions. </Description>
                 <DisplayName>Vulcanite Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='vulcaniteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='vulcaniteSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Vulcanite distributions. </Description>
                 <DisplayName>Vulcanite Size</DisplayName>
             </OptionNumeric>
@@ -353,7 +381,8 @@
         <!--*******************   Sanguinite   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='sanguiniteDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyNetherOres'>
+            <OptionChoice name='sanguiniteDist' default='vanillaStdGen' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?AllMetNetherOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Sanguinite is generated. </Description>
                 <DisplayName>Sanguinite Type</DisplayName>
 
@@ -362,18 +391,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No sanguinite is generated at all.'/>
+                <Choice value='none' displayValue='None' description='No sanguinite is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='sanguiniteFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='sanguiniteFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Sanguinite distributions. </Description>
                 <DisplayName>Sanguinite Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='sanguiniteSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyNetherOres'>
+            <OptionNumeric name='sanguiniteSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyNetherOres'>
+	       <DisplayState>:= if(?MetNetherGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Sanguinite distributions. </Description>
                 <DisplayName>Sanguinite Size</DisplayName>
             </OptionNumeric>
@@ -424,7 +454,7 @@
             <Replaces block='903:3'/>	<!--  Midasium  -->
             <Replaces block='903:4'/>	<!--  Vyroxeres  -->
             <Replaces block='903:5'/>	<!--  Ceruclase  -->
-            <Replaces block='903:6'/>	<!--  Aldourite  (Ohhhhhh Ghost Ore.... REMOVED FROM GAME)  -->
+            <Replaces block='903:6'/>	<!--  Aldourite  -->
             <Replaces block='903:7'/>	<!--  Kalendrite  -->
             <Replaces block='903:8'/>	<!--  Vulcanite  -->
             <Replaces block='903:9'/>	<!--  Sanguinite  -->
@@ -434,7 +464,7 @@
 
 
 
-	<IfCondition condition=':= AllMetFantasyOre="AllMetFantasyOre_On"'>
+	<IfCondition condition=':= AllMetNetherOre="true"'>
 	
 	        
 	        <!--*******************   Ignatius   ***********************-->
@@ -598,6 +628,7 @@
 	        </ConfigSection>
 	        <!-- ********** / Ceruclase ********** -->
 
+
 	        <!--*******************   Alduorite   ***********************-->
 	        <ConfigSection>
 	        
@@ -623,7 +654,7 @@
 	            
 	        </ConfigSection>
 	        <!-- ********** / Alduorite ********** -->
-	
+		
 	
 	        <!--*******************   Kalendrite   ***********************-->
 	        <ConfigSection>

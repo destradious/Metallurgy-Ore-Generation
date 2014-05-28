@@ -19,7 +19,7 @@
     *************************************************************************************-->
     <ConfigSection>
     
-        <OptionDisplayGroup name='groupMetallurgyFantasyOres' displayName='Met. Fantasy Ores' displayState='shown'>
+        <OptionDisplayGroup name='groupMetallurgyFantasyOres' displayName='[Fantasy Ores]' displayState='shown'>
             <Description> 
                 Distribution options for the Metallurgy Fantasy Ores  (Prometheum, Deep Iron, Infuscolium, Oureclase, Astral Silver, Carmot, Mithril, Rubracium, Orichalcum, Adamantine, Atlarus).
             </Description>
@@ -27,19 +27,29 @@
 
 
 	<ConfigSection>
-		<OptionChoice name='AllMetFantasyOre' default='AllMetFantasyOre_On' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+
+		<OptionChoice name='AllMetFantasyOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyFantasyOres'>
 			<Description> Turns Metallurgy Fantasy Ore generation On or Off </Description>
 			<DisplayName>Metallurgy Fantasy Ores</DisplayName>
 
-			<Choice value='AllMetFantasyOre_On' displayValue='ON'>
+			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Fantasy Ores WILL be Generated. You can still customize each Ore individually below. </Description>
 			</Choice>
-
-			<Choice value='AllMetFantasyOre_Off' displayValue='OFF'>
-				<Description> Metallurgy Fantasy Ores will NOT be generated at all. </Description>
+			<Choice value='false' displayValue='OFF'>
+				<Description> Metallurgy Fantasy Ores will NOT be generated. </Description>
 			</Choice>
 			
 		</OptionChoice>
+
+		<OptionChoice name='MetFantasyGenDetailed' default='false' displayGroup='groupMetallurgyFantasyOres'>
+		         <DisplayState>:= if(?AllMetFantasyOre,"shown_dynamic","hidden")</DisplayState>	<!--  Extra Details Option Visible?  -->
+			<Description> Turns on extra detailed customizations. </Description>
+			<DisplayName>Full Customization?</DisplayName>
+
+			<Choice value='true' displayValue='ON'></Choice>
+			<Choice value='false' displayValue='OFF'></Choice>
+		</OptionChoice>
+
 	</ConfigSection>
 
 
@@ -47,7 +57,8 @@
         <!--*******************   Prometheum   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='prometheumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionChoice name='prometheumDist' default='vanillaStdGen' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Prometheum is generated. </Description>
                 <DisplayName>Prometheum Type</DisplayName>
 
@@ -56,18 +67,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No prometheum is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Prometheum is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='prometheumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='prometheumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Prometheum distributions. </Description>
                 <DisplayName>Prometheum Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='prometheumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='prometheumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Prometheum distributions. </Description>
                 <DisplayName>Prometheum Size</DisplayName>
             </OptionNumeric>
@@ -78,10 +90,11 @@
         <!-- ********** / Prometheum  ********** -->
 
 
-        <!--*******************   DeepIron   ***********************-->
+        <!--*******************   Deep Iron   ***********************-->
         <ConfigSection>
         
             <OptionChoice name='deepironDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Deep Iron is generated. </Description>
                 <DisplayName>DeepIron Type</DisplayName>
 
@@ -90,23 +103,24 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No deepiron is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Deep Iron is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='deepironFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='deepironFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Deep Iron distributions. </Description>
                 <DisplayName>DeepIron Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='deepironSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='deepironSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Deep Iron distributions. </Description>
                 <DisplayName>DeepIron Size</DisplayName>
             </OptionNumeric>
 
-            <MystcraftSymbol name='deepironClusters' displayName='DeepIron Clusters'/>
+            <MystcraftSymbol name='deepironClusters' displayName='Deep Iron Clusters'/>
        
         </ConfigSection>        
         <!-- ********** / DeepIron  ********** -->
@@ -116,6 +130,7 @@
         <ConfigSection>
         
             <OptionChoice name='infuscoliumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Infuscolium is generated. </Description>
                 <DisplayName>Infuscolium Type</DisplayName>
 
@@ -124,18 +139,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No infuscolium is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Infuscolium is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='infuscoliumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='infuscoliumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Infuscolium distributions. </Description>
                 <DisplayName>Infuscolium Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='infuscoliumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='infuscoliumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Infuscolium distributions. </Description>
                 <DisplayName>Infuscolium Size</DisplayName>
             </OptionNumeric>
@@ -150,26 +166,28 @@
         <ConfigSection>
         
             <OptionChoice name='oureclaseDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Oureclase is generated. </Description>
                 <DisplayName>Oureclase Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
                     <Description> 
-                        Small evenly scattered clusters of ore.  Found between layers 12 and 48. This is the vanilla Minecraft style of generation/distribution.
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No oureclase is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Oureclase is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='oureclaseFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='oureclaseFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Oureclase distributions. </Description>
                 <DisplayName>Oureclase Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='oureclaseSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='oureclaseSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Oureclase distributions. </Description>
                 <DisplayName>Oureclase Size</DisplayName>
             </OptionNumeric>
@@ -183,7 +201,8 @@
         <!--*******************   Astral Silver   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='astralsilverDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionChoice name='astralsilverDist' default='vanillaStdGen' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how AstralSilver is generated. </Description>
                 <DisplayName>AstralSilver Type</DisplayName>
 
@@ -192,23 +211,24 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No astralsilver is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Astral Silver is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='astralsilverFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='astralsilverFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for AstralSilver distributions. </Description>
                 <DisplayName>AstralSilver Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='astralsilverSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='astralsilverSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for AstralSilver distributions. </Description>
                 <DisplayName>AstralSilver Size</DisplayName>
             </OptionNumeric>
 
-            <MystcraftSymbol name='astralsilverClusters' displayName='AstralSilver Clusters'/>
+            <MystcraftSymbol name='astralsilverClusters' displayName='Astral Silver Clusters'/>
        
         </ConfigSection>        
         <!-- ********** / AstralSilver  ********** -->
@@ -218,6 +238,7 @@
         <ConfigSection>
         
             <OptionChoice name='carmotDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Carmot is generated. </Description>
                 <DisplayName>Carmot Type</DisplayName>
 
@@ -226,18 +247,19 @@
                         Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No carmot is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Carmot is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='carmotFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='carmotFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Carmot distributions. </Description>
                 <DisplayName>Carmot Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='carmotSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='carmotSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Carmot distributions. </Description>
                 <DisplayName>Carmot Size</DisplayName>
             </OptionNumeric>
@@ -252,26 +274,28 @@
         <ConfigSection>
         
             <OptionChoice name='mithrilDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Mithril is generated. </Description>
                 <DisplayName>Mithril Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
                     <Description> 
-                        Small evenly scattered clusters of ore.  Found between layers 18 and 42. This is the vanilla Minecraft style of generation/distribution.
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No mithril is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Mithril is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='mithrilFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='mithrilFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Mithril distributions. </Description>
                 <DisplayName>Mithril Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='mithrilSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='mithrilSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Mithril distributions. </Description>
                 <DisplayName>Mithril Size</DisplayName>
             </OptionNumeric>
@@ -286,26 +310,28 @@
         <ConfigSection>
         
             <OptionChoice name='rubraciumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Rubracium is generated. </Description>
                 <DisplayName>Rubracium Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
                     <Description> 
-                        Small evenly scattered clusters of ore.  Found below layer 32. This is the vanilla Minecraft style of generation/distribution.
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No rubracium is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Rubracium is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='rubraciumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='rubraciumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Rubracium distributions. </Description>
                 <DisplayName>Rubracium Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='rubraciumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='rubraciumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Rubracium distributions. </Description>
                 <DisplayName>Rubracium Size</DisplayName>
             </OptionNumeric>
@@ -320,26 +346,28 @@
         <ConfigSection>
         
             <OptionChoice name='orichalcumDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Orichalcum is generated. </Description>
                 <DisplayName>Orichalcum Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
                     <Description> 
-                        Small evenly scattered clusters of ore.  Found between layers 6 and 20. This is the vanilla Minecraft style of generation/distribution.
+                        Small evenly scattered clusters of ore.  This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
-
-                <Choice value='none' displayValue='None' description='No orichalcum is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Orichalcum is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='orichalcumFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='orichalcumFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Orichalcum distributions. </Description>
                 <DisplayName>Orichalcum Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='orichalcumSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='orichalcumSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Orichalcum distributions. </Description>
                 <DisplayName>Orichalcum Size</DisplayName>
             </OptionNumeric>
@@ -353,27 +381,30 @@
         <!--*******************   Adamantine   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='adamantineDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionChoice name='adamantineDist' default='vanillaStdGen' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Adamantine is generated. </Description>
                 <DisplayName>Adamantine Type</DisplayName>
 
                 <Choice value='vanillaStdGen' displayValue='Clusters'>
                     <Description> 
-                        Small evenly scattered clusters of ore. Found below layer 10. This is the vanilla Minecraft style of generation/distribution.
+                        Small evenly scattered clusters of ore. This is the vanilla Minecraft style of generation/distribution.
                     </Description>
                 </Choice>
 
-                <Choice value='none' displayValue='None' description='No adamantine is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Adamantine is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='adamantineFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='adamantineFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Adamantine distributions. </Description>
                 <DisplayName>Adamantine Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='adamantineSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='adamantineSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Adamantine distributions. </Description>
                 <DisplayName>Adamantine Size</DisplayName>
             </OptionNumeric>
@@ -387,7 +418,8 @@
         <!--*******************   Atlarus   ***********************-->
         <ConfigSection>
         
-            <OptionChoice name='atlarusDist' default='vanillaStdGen' displayState='shown' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionChoice name='atlarusDist' default='vanillaStdGen' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?AllMetFantasyOre,"shown","hidden")</DisplayState>	<!--  Visible or Not?  -->
                 <Description> Controls how Atlarus is generated. </Description>
                 <DisplayName>Atlarus Type</DisplayName>
 
@@ -397,17 +429,19 @@
                     </Description>
                 </Choice>
 
-                <Choice value='none' displayValue='None' description='No atlarus is generated at all.'/>
+                <Choice value='none' displayValue='None' description='NO Atlarus is generated'/>
 
             </OptionChoice>
 
             
-            <OptionNumeric name='atlarusFreq' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='atlarusFreq' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Frequency multiplier for Atlarus distributions. </Description>
                 <DisplayName>Atlarus Freq.</DisplayName>
             </OptionNumeric> 
             
-            <OptionNumeric name='atlarusSize' default='1'  min='0' max='5' displayState='hidden' displayGroup='groupMetallurgyFantasyOres'>
+            <OptionNumeric name='atlarusSize' default='1'  min='0' max='5' displayGroup='groupMetallurgyFantasyOres'>
+	       <DisplayState>:= if(?MetFantasyGenDetailed,"shown","hidden")</DisplayState>	<!--  Extra Details Turned On?  -->
                 <Description> Size multiplier for Atlarus distributions. </Description>
                 <DisplayName>Atlarus Size</DisplayName>
             </OptionNumeric>
@@ -467,7 +501,7 @@
         </Substitute>
 
 
-	<IfCondition condition=':= AllMetFantasyOre="AllMetFantasyOre_On"'>
+	<IfCondition condition=':= AllMetFantasyOre="true"'>
 	
 	        
 	        <!--*******************   Prometheum   ***********************-->
