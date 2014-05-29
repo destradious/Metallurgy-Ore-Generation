@@ -465,300 +465,300 @@
 
 
 	<IfCondition condition=':= AllMetNetherOre="true"'>
-
-
+	
+	        
 	        <!--*******************   Ignatius   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.ignatiusClusters > 0, ignatiusDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='IgnatiusStandard' block='903:0' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.75 * ignatiusSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.75 * ignatiusFreq * if(age,age.ignatiusClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Ignatius ********** -->
-
-
+	
+	
 	        <!--*******************   ShadowIron   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.shadowironClusters > 0, shadowironDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='ShadowIronStandard' block='903:1' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 1.25 * shadowironSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 1.20 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 125 to 81  -->
 	                    <Setting name='Height' avg=':= 210/128 * dimension.groundLevel' range=':= 40/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / ShadowIron ********** -->
-
-
+	
+	
 	        <!--*******************   Lemurite   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.lemuriteClusters > 0, lemuriteDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='LemuriteStandard' block='903:2' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.75 * lemuriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.3 * lemuriteFreq * if(age,age.lemuriteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Lemurite ********** -->
-
-
+	
+	
 	        <!--*******************   Midasium   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.midasiumClusters > 0, midasiumDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='MidasiumStandard' block='903:3' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.75 * midasiumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * midasiumFreq * if(age,age.midasiumClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 80 to 0  -->
 	                    <Setting name='Height' avg=':= 80/128 * dimension.groundLevel' range=':= 80/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Midasium ********** -->
-
-
+	
+	
 	        <!--*******************   Vyroxeres   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.vyroxeresClusters > 0, vyroxeresDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='VyroxeresStandard' block='903:4' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.875 * vyroxeresSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * vyroxeresFreq * if(age,age.vyroxeresClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Vyroxeres ********** -->
-
-
+	
+	
 	        <!--*******************   Ceruclase   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.ceruclaseClusters > 0, ceruclaseDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='CeruclaseStandard' block='903:5' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.5 * ceruclaseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * ceruclaseFreq * if(age,age.ceruclaseClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 96 to 0  -->
 	                    <Setting name='Height' avg=':= 96/128 * dimension.groundLevel' range=':= 96/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Ceruclase ********** -->
 
 
 	        <!--*******************   Alduorite   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.alduoriteClusters > 0, alduoriteDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='AlduoriteStandard' block='903:6' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.75 * alduoriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.75 * alduoriteFreq * if(age,age.alduoriteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 112 to 0  -->
 	                    <Setting name='Height' avg=':= 112/128 * dimension.groundLevel' range=':= 112/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Alduorite ********** -->
-
-
+		
+	
 	        <!--*******************   Kalendrite   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.kalendriteClusters > 0, kalendriteDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='KalendriteStandard' block='903:7' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.375 * kalendriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * kalendriteFreq * if(age,age.kalendriteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 64 to 0  -->
 	                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 64/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Kalendrite ********** -->
-
-
+	
+	
 	        <!--*******************   Vulcanite   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.vulcaniteClusters > 0, vulcaniteDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='VulcaniteStandard' block='903:8' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.50 * vulcaniteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.12 * vulcaniteFreq * if(age,age.vulcaniteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 40 to 20  -->
 	                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Vulcanite ********** -->
-
-
+	
+	
 	        <!--*******************   Sanguinite   ***********************-->
 	        <ConfigSection>
-
+	        
 		  <!-- *****  Standard Cluster  ***** -->
 	            <IfCondition condition=':= if(age, age.sanguiniteClusters > 0, sanguiniteDist = "vanillaStdGen")'>    
-
+	
 	                <StandardGen name='SanguiniteStandard' block='903:9' inherits='PresetStandardGen_Nether'> 
 	                    <Description> Equivalent to vanilla minecraft Cluster distribution. </Description>
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
-
+	
 	                    <Setting name='Size' avg=':= 0.25 * sanguiniteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * sanguiniteFreq * if(age,age.sanguiniteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 32 to 0  -->
 	                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
-
+	
 	                </StandardGen>
-
-
+	
+	
 			<!-- More Distribution Types can go here -->
-
-
+	
+	
 	            </IfCondition>   
-
+	            
 	        </ConfigSection>
 	        <!-- ********** / Sanguinite ********** -->
-
-
-
-
+	
+	
+	
+	
 	        <!-- Additional Ores can go here... -->
-
+	
 	        <!--*******************   (Ore)   ***********************-->
-
-
+	
+	
 	        <!-- ********** / (Ore)  ********** -->
-
-
+	
+	
 	</IfCondition>
-
+	
     </IfCondition>
     
 </ConfigSection>
