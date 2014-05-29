@@ -702,6 +702,7 @@
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
 	
+
 	                    <Setting name='Size' avg=':= 0.50 * vulcaniteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.12 * vulcaniteFreq * if(age,age.vulcaniteClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 40 to 20  -->
