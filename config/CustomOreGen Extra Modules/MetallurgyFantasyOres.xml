@@ -30,7 +30,7 @@
 
 		<OptionChoice name='AllMetFantasyOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyFantasyOres'>
 			<Description> Turns Metallurgy Fantasy Ore generation On or Off </Description>
-			<DisplayName>Metallurgy Fantasy Ores</DisplayName>
+			<DisplayName>**( Metallurgy Fantasy Ores )**</DisplayName>
 
 			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Fantasy Ores WILL be Generated. You can still customize each Ore individually below. </Description>

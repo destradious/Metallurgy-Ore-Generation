@@ -31,7 +31,7 @@
 
 		<OptionChoice name='AllVanillaOre' default='true' displayState='shown_dynamic' displayGroup='groupStdOres'>
 			<Description> Turns Minecraft Vanilla Ore generation On or Off </Description>
-			<DisplayName>Vanilla Minecraft Ores</DisplayName>
+			<DisplayName>**( Vanilla Minecraft Ores )**</DisplayName>
 
 			<Choice value='true' displayValue='ON'>
 				<Description> Vanilla Minecraft Ores WILL be Generated. You can still customize each Ore individually below. </Description>

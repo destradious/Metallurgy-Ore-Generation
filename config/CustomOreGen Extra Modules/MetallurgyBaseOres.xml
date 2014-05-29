@@ -30,7 +30,7 @@
 
 		<OptionChoice name='AllMetBaseOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyBaseOres'>
 			<Description> Turns Metallurgy Base Ore generation On or Off </Description>
-			<DisplayName>Metallurgy Base Ores</DisplayName>
+			<DisplayName>**( Metallurgy Base Ores )**</DisplayName>
 
 			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Base Ores WILL be Generated. You can still customize each Ore individually below. </Description>

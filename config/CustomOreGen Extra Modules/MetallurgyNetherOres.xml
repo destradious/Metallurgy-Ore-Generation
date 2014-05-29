@@ -30,7 +30,7 @@
 
 		<OptionChoice name='AllMetNetherOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyNetherOres'>
 			<Description> Turns Metallurgy Nether Ore generation On or Off </Description>
-			<DisplayName>Metallurgy Nether Ores</DisplayName>
+			<DisplayName>**( Metallurgy Nether Ores )**</DisplayName>
 
 			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Nether Ores WILL be Generated. You can still customize each Ore individually below. </Description>

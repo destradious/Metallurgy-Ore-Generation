@@ -30,7 +30,7 @@
 
 		<OptionChoice name='AllMetPreciousOre' default='true' displayState='shown_dynamic' displayGroup='groupMetallurgyPreciousOres'>
 			<Description> Turns Metallurgy Precious Ore generation On or Off </Description>
-			<DisplayName>Metallurgy Precious Ores</DisplayName>
+			<DisplayName>**( Metallurgy Precious Ores )**</DisplayName>
 
 			<Choice value='true' displayValue='ON'>
 				<Description> Metallurgy Precious Ores WILL be Generated. You can still customize each Ore individually below. </Description>
