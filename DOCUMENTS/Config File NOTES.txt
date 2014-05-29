@@ -1,0 +1,57 @@
+
+
+
+
+
+=========================================================================
+ CONFIG FILES, THE BASICS
+=========================================================================
+
+"CustomOreGen_Config.xml"
+-------------------------------------------------------------------------
+This file contains all of the configurations for how the different STYLES of Ore Deposits are generated (placed). Things like Veins, Clouds, Clusters, etc. Using this Config file you can change the way in which these different Styles of Ore Placement behave and even modify their frequency in different types of Biomes. 
+
+Note that ALL "Preset" Distributions listed in this file are "Global", meaning that these setting will be used for ALL generated worlds rather than specific worlds.
+
+By default in this file, ALL Biomes can generate the different Distribution Styles, though this can and will be overriden by other Custom Ore Config files if you choose to enable their options in Settings or other Config Files.
+
+This file does NOT modify the rarity or locations of different Ore Blocks/Types.
+
+
+"\CustomOreGen Standard Modules\" and "\CustomOreGen Extra Modules\"
+-------------------------------------------------------------------------
+The Config files found in these two folders are what determines how and where the different Ores in the Minecraft game are generated. It sets what Distribution Style (Veins, Clouds, etc.), the frequency and density (amount, size) of the different Ores, and includes "Ease of Use" preset options to allow the Player to choose how the different Ores will be generated.
+
+Each of the Config files found in the "\CustomOreGen Standard Modules\" folder are preset configurations and user options for Ore distribution for Stanard Vanilla Minecraft ("MinecraftOres.xml") and a few other possible popular mods that contain Ores. Only the modules (config files) that match the mods you have loaded for your game should be used/loaded in the main Config File ("CustomOreGen_Config.xml").
+
+These specific Config files are basically split into two major sections.
+
+1) USER (PLAYER) WORLD GEN OPTIONS
+
+The first section is the "User Customization Settings", the options, descriptions and values that the Player can pick from in an extra Menu during the creation of a new game world. These link (by special names) to the second section of the file, the Ore Distributions Section.
+
+2) ORE DISTRIBUTION SETTINGS
+
+The Ore Distributions Section of the file is where all the in game settings are for exactly how the different Ores will be generated (where, how much, and in what Style/Shape). Everything in here happens "Behind The Scenes", beyond the control of the Player in the game once the world is generated and running (unless he cheats and uses the console).
+
+
+
+=========================================================================
+DETAILS FOR THE MAIN "CustomOreGen_Config.xml" FILE
+=========================================================================
+
+As already mentioned, this file contains the "General" and "Global" rules for basic Ore Distribution Styles/Shapes, not specifics on how each of the Ores are generated. It sets up how the different Ore Styles/Shapes (Clusters, etc.) are "drawn" or work. Ore specific details are left to the other Config files, and the settings listed in THIS file are used as a "Parent Template" for Distribution Styles.
+
+There are MANY presets for different types of Styles already included in the file. You "link" an Ore in the other Config files to the Distribution Style in THIS file by the preset Style's Name. Then you can customize the specifics for each individual Ore in the other Config Files, which if properly linked will use the presets in THIS file as a starting template that the settings in the other config files can adjust and override if desired.
+
+
+
+
+
+
+=========================================================================
+DETAILS FOR THE ORE CONFIG FILES
+=========================================================================
+
+
+
