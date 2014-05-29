@@ -454,7 +454,7 @@
             <Replaces block='903:3'/>	<!--  Midasium  -->
             <Replaces block='903:4'/>	<!--  Vyroxeres  -->
             <Replaces block='903:5'/>	<!--  Ceruclase  -->
-            <Replaces block='903:6'/>	<!--  Aldourite  -->
+            <Replaces block='903:6'/>	<!--  Adlourite  -->
             <Replaces block='903:7'/>	<!--  Kalendrite  -->
             <Replaces block='903:8'/>	<!--  Vulcanite  -->
             <Replaces block='903:9'/>	<!--  Sanguinite  -->
@@ -480,6 +480,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * ignatiusSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.75 * ignatiusFreq * if(age,age.ignatiusClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -507,6 +508,7 @@
 	
 	                    <Setting name='Size' avg=':= 1.25 * shadowironSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 1.20 * shadowironFreq * if(age,age.shadowironClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 125 to 81  -->
 	                    <Setting name='Height' avg=':= 210/128 * dimension.groundLevel' range=':= 40/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -534,6 +536,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * lemuriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.3 * lemuriteFreq * if(age,age.lemuriteClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -561,6 +564,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * midasiumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * midasiumFreq * if(age,age.midasiumClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 80 to 0  -->
 	                    <Setting name='Height' avg=':= 80/128 * dimension.groundLevel' range=':= 80/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -588,6 +592,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.875 * vyroxeresSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * vyroxeresFreq * if(age,age.vyroxeresClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -615,6 +620,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * ceruclaseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * ceruclaseFreq * if(age,age.ceruclaseClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 96 to 0  -->
 	                    <Setting name='Height' avg=':= 96/128 * dimension.groundLevel' range=':= 96/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -642,6 +648,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * alduoriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.75 * alduoriteFreq * if(age,age.alduoriteClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 112 to 0  -->
 	                    <Setting name='Height' avg=':= 112/128 * dimension.groundLevel' range=':= 112/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -669,6 +676,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * kalendriteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * kalendriteFreq * if(age,age.kalendriteClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 64 to 0  -->
 	                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 64/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -696,6 +704,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.25 * vulcaniteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * vulcaniteFreq * if(age,age.vulcaniteClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 40 to 20  -->
 	                    <Setting name='Height' avg=':= 64/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>
@@ -723,6 +732,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.25 * sanguiniteSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * sanguiniteFreq * if(age,age.sanguiniteClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 32 to 0  -->
 	                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 	
 	                </StandardGen>

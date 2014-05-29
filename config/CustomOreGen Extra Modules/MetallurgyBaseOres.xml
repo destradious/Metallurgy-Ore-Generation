@@ -221,6 +221,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * copperSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.6 * copperFreq * if(age,age.copperClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -252,6 +253,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.875 * tinSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.5 * tinFreq * if(age,age.tinClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -281,6 +283,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * manganeseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * manganeseFreq * if(age,age.manganeseClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->

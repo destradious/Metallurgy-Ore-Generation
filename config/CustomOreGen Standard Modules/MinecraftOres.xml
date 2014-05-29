@@ -465,8 +465,8 @@
 	                    <WireframeColor>0x60101010</WireframeColor>
 	                    <Setting name='MotherlodeFrequency' avg=':= 10.7 * coalFreq * if(age,age.coalVeins,1) * _default_'/>
 	                    <Setting name='MotherlodeSize' avg=':= coalSize * _default_' range=':= coalSize * _default_'/>
-			<!--  HEIGHT: Layers 70 to 46  -->
-	                    <Setting name='MotherlodeHeight' avg=':= 120/128 * dimension.groundLevel' range=':= 20/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 80 to 46  -->
+	                    <Setting name='MotherlodeHeight' avg=':= 130/128 * dimension.groundLevel' range=':= 30/128 * dimension.groundLevel'/>
 	                    <Setting name='BranchLength' avg=':= 0.45 * _default_' range=':= 0.45 * _default_'/>
 	                    <Setting name='BranchInclination' avg='0' range='0.35'/>
 	                    <Setting name='BranchHeightLimit' avg='10'/>
@@ -487,8 +487,8 @@
 	                <Veins name='CoalVeinsSwamp' inherits='CoalVeins'>
 	                    <Description>  This roughly triples the chance of finding coal in a swamp. </Description>      
 	                    <Setting name='MotherlodeFrequency' avg=':= 2 * _default_'/>
-			<!--  HEIGHT: Layers 80 to 36  -->
-	                    <Setting name='MotherlodeHeight' avg=':= _default_' range=':= 2 * _default_'/>
+			<!--  HEIGHT: Layers 65 to 31  -->
+	                    <Setting name='MotherlodeHeight' avg=':= 100/128 * dimension.groundLevel' range=':= 30/128 * dimension.groundLevel'/>
 	                    <Setting name='BranchHeightLimit' avg=':= 2 * _default_'/>  
 	                    <BiomeType name='Swamp'/>
 	                </Veins>      
@@ -555,6 +555,7 @@
 			<!--  HEIGHT: Layers 100 to 64  -->
 	                    <Setting name='MotherlodeHeight' avg=':= 168/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 	                    <Setting name='BranchHeightLimit' avg=':= 0.6 * _default_'/>  
+
 	                    <BiomeType name='Hills.*'/>
 	                    <BiomeType name='Extreme.*'/>
 	                </Veins>      
@@ -565,6 +566,7 @@
 			<!--  HEIGHT: Layers 64 to 16  -->
 	                    <Setting name='MotherlodeHeight' avg=':=_default_' range=':= 2 * _default_'/>
 	                    <Setting name='BranchHeightLimit' avg=':= 2 * _default_'/>  
+
 	                    <BiomeType name='Frozen'/>
 	                    <BiomeType name='Water' weight='-1'/>
 	                </Veins>
@@ -852,6 +854,7 @@
 	            </IfCondition>
 	        
 	        </ConfigSection>           
+
 	        
 	        <!--*****************   Emerald   **********************-->
 	        <ConfigSection>

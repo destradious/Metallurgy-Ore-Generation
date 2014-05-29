@@ -517,6 +517,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.75 * prometheumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * prometheumFreq * if(age,age.prometheumClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -548,6 +549,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * deepironSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * deepironFreq * if(age,age.deepironClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -579,6 +581,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * infuscoliumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * infuscoliumFreq * if(age,age.infuscoliumClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -610,6 +613,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * oureclaseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * oureclaseFreq * if(age,age.oureclaseClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 48 to 20  -->
 	                    <Setting name='Height' avg=':= 72/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -618,6 +622,7 @@
 	                    <Biome name='Extreme.*' weight='0.5'/>
 	                    <Biome name='Hills.*' weight='0.5'/>
 	                    <Biome name='Cold.*' weight='0.5'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -645,11 +650,13 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * astralsilverSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * astralsilverFreq * if(age,age.astralsilverClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
 	                    <BiomeType name='.*' weight='1'/>
 	                    <BiomeType name='Plains.*' weight='-0.5'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -677,10 +684,12 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * carmotSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * carmotFreq * if(age,age.carmotClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
 	                    <BiomeType name='.*' weight='1'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -708,10 +717,11 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * mithrilSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * mithrilFreq * if(age,age.mithrilClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 42 to 14  -->
 	                    <Setting name='Height' avg=':= 60/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-	                    <BiomeType name='.*' weight='0.60'/>
+	                    <BiomeType name='.*' weight='0.50'/>
 	                    <Biome name='Extreme.*' weight='0.5'/>
 	                    <Biome name='Hills.*' weight='0.5'/>
 	                    <Biome name='Cold.*' weight='0.5'/>
@@ -719,6 +729,7 @@
 	                    <Biome name='Frozen.*' weight='0.2'/>
 	                    <Biome name='Jungle.*' weight='0.2'/>
 	                    <Biome name='Forest.*' weight='0.2'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -746,6 +757,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * rubraciumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.1 * rubraciumFreq * if(age,age.rubraciumClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 32 to 0  -->
 	                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -758,6 +770,7 @@
 	                    <Biome name='Jungle.*' weight='0.25'/>
 	                    <Biome name='Forest.*' weight='0.25'/>
 	                    <Biome name='Desert.*' weight='0.25'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -785,6 +798,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * orichalcumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.1 * orichalcumFreq * if(age,age.orichalcumClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 24 to 0  -->
 	                    <Setting name='Height' avg=':= 24/128 * dimension.groundLevel' range=':= 24/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -796,6 +810,7 @@
 	                    <Biome name='Frozen.*' weight='0.25'/>
 	                    <Biome name='Jungle.*' weight='0.25'/>
 	                    <Biome name='Forest.*' weight='0.25'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -823,6 +838,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * adamantineSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.05 * adamantineFreq * if(age,age.adamantineClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 10 to 0  -->
 	                    <Setting name='Height' avg=':= 10/128 * dimension.groundLevel' range=':= 10/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -832,6 +848,7 @@
 	                    <Biome name='Cold.*' weight='0.5'/>
 	                    <Biome name='Ice.*' weight='0.5'/>
 	                    <Biome name='Frozen.*' weight='0.25'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>
@@ -859,6 +876,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * atlarusSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.05 * atlarusFreq * if(age,age.atlarusClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 10 to 0  -->
 	                    <Setting name='Height' avg=':= 10/128 * dimension.groundLevel' range=':= 10/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -868,6 +886,7 @@
 	                    <Biome name='Cold.*' weight='0.5'/>
 	                    <Biome name='Ice.*' weight='0.5'/>
 	                    <Biome name='Frozen.*' weight='0.5'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	
 	                </StandardGen>

@@ -222,6 +222,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.63 * zincSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.3 * zincFreq * if(age,age.zincClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -253,6 +254,7 @@
 	
 	                    <Setting name='Size' avg=':= 0.63 * silverSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.3 * silverFreq * if(age,age.silverClusters,1) * _default_'/>
+			<!--  HEIGHT: Layers 128 to 0  -->
 	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
@@ -284,7 +286,8 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * platinumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * platinumFreq * if(age,age.platinumClusters,1) * _default_'/>
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 100 to 64   (Only up high in hills/mountains) -->
+	                    <Setting name='Height' avg=':= 168/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
 	                    <BiomeType name='.*' weight='0.5'/>
@@ -296,6 +299,7 @@
 	                    <Biome name='Jungle.*' weight='0.5'/>
 	                    <Biome name='Forest.*' weight='0.5'/>
 	                    <Biome name='Desert.*' weight='0.5'/>
+
 	                    <Biome name='Hell.*' weight='-1'/>
 	                    <Biome name='Plains.*' weight='-0.5'/>
 	
