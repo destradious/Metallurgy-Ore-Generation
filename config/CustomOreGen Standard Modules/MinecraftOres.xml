@@ -465,8 +465,8 @@
 	                    <WireframeColor>0x60101010</WireframeColor>
 	                    <Setting name='MotherlodeFrequency' avg=':= 10.7 * coalFreq * if(age,age.coalVeins,1) * _default_'/>
 	                    <Setting name='MotherlodeSize' avg=':= coalSize * _default_' range=':= coalSize * _default_'/>
-			<!--  HEIGHT: Layers 80 to 46  -->
-	                    <Setting name='MotherlodeHeight' avg=':= 130/128 * dimension.groundLevel' range=':= 30/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 76 to 40  -->
+	                    <Setting name='MotherlodeHeight' avg=':= 120/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
 	                    <Setting name='BranchLength' avg=':= 0.45 * _default_' range=':= 0.45 * _default_'/>
 	                    <Setting name='BranchInclination' avg='0' range='0.35'/>
 	                    <Setting name='BranchHeightLimit' avg='10'/>

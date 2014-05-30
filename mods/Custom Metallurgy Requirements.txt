@@ -1,0 +1,18 @@
+
+(!!** ALL The Mods Require Minecraft 1.6.4 **!!)
+
+
+ * Backpacks Mod Requires:
+---------------------------
+	BCMod
+
+
+ * Custom Ores:
+---------------------------
+	Forge 1.6.4
+
+
+* Metallurgy:
+---------------------------
+	Forge 1.6.4
+
