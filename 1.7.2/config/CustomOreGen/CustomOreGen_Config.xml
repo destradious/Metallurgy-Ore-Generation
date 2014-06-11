@@ -1,21 +1,37 @@
-<!--*************************  CustomOreGen Configuration *****************************************
+<!--*************************  CustomOreGen Configuration **********************>
 *
-*   CustomOreGen allows you to customize the generation of Ore within your worlds.  This file
-*   contains a list of "distributions", which place a specific block according to a specific
-*   algorithm.  You can have as many distributions as you want, including multiple distributions for
-*   the same block type.
+*   IMPORTANT: TO CUSTOMIZE THIS CONFIGURATION, COPY THIS FILE TO
+*              "CustomOreGen_Config.xml".
+*              THIS FILE WILL BE OVERWRITTEN EVERY TIME THE MOD LOADS.
+*
+*              To override the configuration for specific worlds,
+*              or specific dimensions, copy this file to the
+*              corresponding save directory.
+*
+*   CustomOreGen allows you to customize the generation of Ore within
+*   your worlds. This file contains a list of "distributions", which
+*   place a specific block according to a specific
+*   algorithm.  You can have as many distributions as you want, including
+*   multiple distributions for the same block type.
 *   
-*   There are four basic algorithms available, "StandardGen", "Susbstitute", "Veins", and "Cloud".
+*   There are four basic algorithms available:
+*   "StandardGen", "Susbstitute", "Veins", and "Cloud".
 *
-*   This file is written in XML.  All names and values are ***CASE SENSISTIVE***.  
+*   This file is written in XML.
+*   Many names and values are ***CASE SENSISTIVE***.  
 *
-*   For details on how to edit this file, please see the online CustomOreGen documentation:
+*   For details on how to edit this file, please see the online documentation:
 *
+*   Documentation for original features by JRoush:
 *       http://customoregen.shoutwiki.com/wiki/Main_Page
 *
-***********************************************************************************************-->
+*   Documentation for features added by current maintainer:
+*       https://github.com/lawremi/CustomOreGen/wiki/Documentation
+*
+******************************************************************************-->
+
 <Config>
-            
+  
     <!--************************   Global Config Options   *********************************
     *   Below are options to control the general behavior of all distributions.
     *************************************************************************************-->
@@ -53,9 +69,9 @@
             <Choice value='false' displayValue='Off'/>
         </OptionChoice> 
         
-        <OptionNumeric name='deferredPopulationRange' default='32' displayGroup='groupGeneral'>
+        <OptionNumeric name='deferredPopulationRange' default='16' displayGroup='groupGeneral'>
             <Description> 
-                How much area around a chunk must be generated before COG will add ores to it. 
+                Radius (in blocks) around a chunk must be generated before COG will add ores to it. 
             </Description>
             <Comment>
                 This is a "magic" option - it has meaning outside of this file in the COG engine itelf.  You can change the value, but do not remove the option itself or change the allowed range.  Changing this value is really not recommended unless you know what you are doing.
@@ -103,7 +119,19 @@
             <Choice value='true' displayValue='On'/>
             <Choice value='false' displayValue='Off'/>
         </OptionChoice>   
-        
+
+        <OptionChoice name='advOptions' default='false'
+                      displayState='shown_dynamic'
+                      displayGroup='groupGeneral'>
+          <Description> 
+            Enable/disable advanced frequency and size settings for
+            individual distributions. 
+          </Description>
+          <DisplayName>Advanced Options</DisplayName>
+          <Choice value='true' displayValue='On'/>
+          <Choice value='false' displayValue='Off'/>
+        </OptionChoice>
+       
     </ConfigSection>
     
     <!--*******************************   Presets   ****************************************
@@ -118,32 +146,19 @@
             </Description>
             <Setting name='Size' avg=':= 8 * oreSize' range='0'/> 
             <Setting name='Frequency' avg=':= 20 * oreFreq' range='0'/> 
-            <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/> 
+            <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/> 
             <Setting name='ParentRangeLimit' avg='32' range='32' type='normal'/>
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </StandardGenPreset>
         
-        <StandardGenPreset name='PresetStandardGen_Nether'>   
-            <Description>
-                A master preset for standardgen ore distributions in the Nether.
-            </Description>
-            <Setting name='Size' avg=':= 8 * oreSize' range='0'/> 
-            <Setting name='Frequency' avg=':= 20 * oreFreq' range='0'/> 
-            <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/> 
-            <Setting name='ParentRangeLimit' avg='32' range='32' type='normal'/>
-            <Replaces block='87'/>	<!-- NetherRack -->
-            <Biome name='Hell'/>	<!-- Only in Hell Dimension -->
-        </StandardGenPreset>
-
-
         <VeinsPreset name='PresetLayeredVeins' branchType='Bezier'>  
             <Description>
                 Small, fairly rare motherlodes with 2-4 horizontal veins each.
             </Description>
             <Setting name='MotherlodeFrequency' avg=':= 0.025 * oreFreq'/>
             <Setting name='MotherlodeSize' avg=':= 2.5 * oreSize' range=':= 1 * oreSize'/>
-            <Setting name='MotherlodeHeight' avg=':= 64/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel' type='normal'/>
+            <Setting name='MotherlodeHeight' avg=':= 32/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel' type='normal'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='3' range='2'/> 
             <Setting name='BranchInclination' avg='0' range='0.55'/> 
@@ -156,7 +171,7 @@
             <Setting name='SegmentRadius' avg=':= 0.5 * oreSize' range=':= 0.3 * oreSize'/>
             <Setting name='OreDensity' avg='1' range='0'/> 
             <Setting name='OreRadiusMult' avg='1.0' range='0.1'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </VeinsPreset>
         
@@ -166,11 +181,11 @@
             </Description>  
             <Setting name='MotherlodeFrequency' avg=':= 0.080 * oreFreq'/>
             <Setting name='MotherlodeSize' avg='0' range='0'/>
-            <Setting name='MotherlodeHeight' avg=':= 152/128 * dimension.groundLevel' range='4'/>
+            <Setting name='MotherlodeHeight' avg=':= 76/64 * dimension.groundLevel' range='4'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='1' range='0'/>
             <Setting name='BranchInclination' avg='-1.31' range='0.22'/>
-            <Setting name='BranchLength' avg=':= 96/128 * dimension.groundLevel' range='16' type='normal'/> 
+            <Setting name='BranchLength' avg=':= 48/64 * dimension.groundLevel' range='16' type='normal'/> 
             <Setting name='BranchHeightLimit' avg='1000'/> 
             <Setting name='SegmentForkFrequency' avg='0.10'/>  
             <Setting name='SegmentAngle' avg='0' range='0.3'/>
@@ -178,7 +193,7 @@
             <Setting name='SegmentRadius' avg=':= 0.30 * oreSize' range=':= 0.1 * oreSize'/> 
             <Setting name='OreDensity' avg='1' range='0'/>
             <Setting name='OreRadiusMult' avg='1.0' range='0.1'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </VeinsPreset>
         
@@ -189,12 +204,12 @@
             </Description>        
             <Setting name='MotherlodeFrequency' avg=':= 1.0 * oreFreq' range=':= 0.3 * oreFreq'/>
             <Setting name='MotherlodeSize' avg=':= 0.9 * oreSize' range=':= 0.3 * oreSize'/>
-            <Setting name='MotherlodeHeight' avg=':= 64/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel' type='normal'/>
+            <Setting name='MotherlodeHeight' avg=':= 32/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel' type='normal'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='0' range='0'/>
             <Setting name='OreDensity' avg='1' range='0'/>
             <Setting name='OreRadiusMult' avg='1.0' range='0.1'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </VeinsPreset>
         
@@ -229,7 +244,7 @@
             </Description>  
             <Setting name='MotherlodeFrequency' avg=':= 0.00025 * oreFreq'/>
             <Setting name='MotherlodeSize' avg=':= 10 * oreSize' range=':= 6 * oreSize' type='normal'/>
-            <Setting name='MotherlodeHeight' avg=':= 90/128 * dimension.groundLevel' range=':= 18/128 * dimension.groundLevel' type='normal'/>
+            <Setting name='MotherlodeHeight' avg=':= 45/64 * dimension.groundLevel' range=':= 9/64 * dimension.groundLevel' type='normal'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='8' range='4'/>
             <Setting name='BranchInclination' avg='0.7' range='0.85'/>
@@ -242,7 +257,7 @@
             <Setting name='SegmentRadius' avg=':= 0.025 * oreSize' range=':= 0.2 * oreSize'/>
             <Setting name='OreDensity' avg='1' range='0'/>
             <Setting name='OreRadiusMult' avg='1' range='0.25'/>
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Replaces block='grass'/>
             <Replaces block='dirt'/>
             <Replaces block='sand'/>
@@ -263,12 +278,12 @@
             </Description>  
             <Setting name='MotherlodeFrequency' avg=':= 80 * dimension.groundLevel/64' range=':= 30 * dimension.groundLevel/64'/>
             <Setting name='MotherlodeSize' avg='0.6' range='0'/>
-            <Setting name='MotherlodeHeight' avg=':= 100/128 * dimension.groundLevel' range=':= 92/128 * dimension.groundLevel'/>
+            <Setting name='MotherlodeHeight' avg=':= 50/64 * dimension.groundLevel' range=':= 46/64 * dimension.groundLevel'/>
             <Setting name='MotherlodeRangeLimit' avg=':= 45 * oreSize' range=':= 30 * oreSize' type='uniform'/>
             <Setting name='BranchFrequency' avg='0' range='0'/> 
             <Setting name='OreDensity' avg='1' range='0'/>
             <Setting name='OreRadiusMult' avg='1.0' range='0'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Replaces block='dirt'/>
             <Replaces block='gravel'/>
             <Replaces block='sandstone'/>
@@ -284,7 +299,7 @@
             </Description>
             <Setting name='MotherlodeFrequency' avg=':= 0.0065 * oreFreq'/>            
             <Setting name='MotherlodeSize' avg=':= 2.3 * oreSize' range=':= 0.5 * oreSize'/>
-            <Setting name='MotherlodeHeight' avg=':= 64/128 * dimension.groundLevel' range=':= 64/128 * dimension.groundLevel' type='uniform'/>
+            <Setting name='MotherlodeHeight' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel' type='uniform'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='1' range='0'/> 
             <Setting name='BranchInclination' avg='0' range='0.75'/> 
@@ -297,7 +312,7 @@
             <Setting name='SegmentRadius' avg=':= 2.0 * oreSize' range=':= 1.0 * oreSize'/> 
             <Setting name='OreDensity' avg='0.04' range='0'/>
             <Setting name='OreRadiusMult' avg='1.0' range='0.1'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </VeinsPreset>
 
@@ -307,7 +322,7 @@
             </Description>
             <Setting name='MotherlodeFrequency' avg=':= 0.06 * oreFreq'/>            
             <Setting name='MotherlodeSize' avg=':= 2.3 * oreSize' range=':= 0.5 * oreSize'/>
-            <Setting name='MotherlodeHeight' avg=':= 16/128 * dimension.groundLevel' range=':= 16/128 * dimension.groundLevel' type='uniform'/>
+            <Setting name='MotherlodeHeight' avg=':= 8/64 * dimension.groundLevel' range=':= 8/64 * dimension.groundLevel' type='uniform'/>
             <Setting name='MotherlodeRangeLimit' avg='32' range='32' type='normal'/>
             <Setting name='BranchFrequency' avg='1' range='0'/> 
             <Setting name='BranchInclination' avg='0.75' range='0.7' type='normal'/>
@@ -320,7 +335,7 @@
             <Setting name='SegmentRadius' avg=':= 2.0 * oreSize' range=':= 0.5 * oreSize'/> 
             <Setting name='OreDensity' avg='0.04' range='0'/>
             <Setting name='OreRadiusMult' avg='1.0' range='0.1'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </VeinsPreset>         
 
@@ -338,40 +353,59 @@
             <Setting name='CloudRadius' avg=':= 25 * oreSize' range=':= 10 * oreSize'/>
             <Setting name='CloudThickness' avg=':= 14 * oreSize' range=':= 6 * oreSize'/>
             <Setting name='CloudSizeNoise' avg='0.2'/>
-            <Setting name='CloudHeight' avg=':= 64/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel' type='normal'/>
+            <Setting name='CloudHeight' avg='32' range='16'
+                     type='normal' scaleTo='sealevel'/>
             <Setting name='CloudInclination' avg='0' range='0.35'/>
             <Setting name='OreRadiusMult' avg='1' range='0.1'/>
             <Setting name='OreDensity' avg='0.1'/>
             <Setting name='OreVolumeNoiseCutoff' avg='0.5'/> 
-            <Replaces block='stone'/>
+            <ReplacesOre block='stone'/>
             <Biome name='.*'/>
         </CloudPreset>
         
     </ConfigSection>
-    
-    <!--****************************   Standard Ores   *************************************
-    *   Import the standard ores module, containing options, presets, and distributions
-    *   for coal, iron, gold, redstone, diamond, lapis lazuli, and emeralds.
-    *************************************************************************************-->
-    <OptionalImport file='CustomOreGen Standard Modules/MinecraftOres.xml'/>
-    
-    <!--*******************************   Mod Ores   ***************************************
-    *   Import modules for supported mods if they are present.
-    *************************************************************************************-->
-<!--    <OptionalImport file='CustomOreGen Standard Modules/IndustrialCraft2.xml'/>
-    <OptionalImport file='CustomOreGen Standard Modules/Forestry.xml'/>
-    <OptionalImport file='CustomOreGen Standard Modules/Redpower2.xml'/>
--->
 
-    <!--************************   User-added Distributions   ******************************
-    *   If you add your own distributions, you can put them here.
-    *   You can also put them in a seperate file in the "CustomOreGen Extra Modules" folder.
-    *************************************************************************************-->
-    <OptionalImport file='CustomOreGen Extra Modules/*'/>
+    <!-- ******************** Import Standard Configs ********************** -->
+    <!--
+         NOTE: to override a default config, remove the corresponding
+         directive (and optionally add something to 'modules/custom')
+    -->
+
+    <Import file='modules/default/ExtraCaves.xml'/>
+<!--    <Import file='modules/default/MinecraftOres.xml'/>	-->
+    <Import file='modules/default/IndustrialCraft2.xml'/>
+    <Import file='modules/default/Forestry.xml'/>
+    <Import file='modules/default/ProjectRed.xml'/>
+    <Import file='modules/default/Dartcraft.xml'/>
+    <Import file='modules/default/TinkersConstruct.xml'/>
+<!--    <Import file='modules/default/Metallurgy.xml'/>	-->
+    <Import file='modules/default/Railcraft.xml'/>
+    <Import file='modules/default/Thaumcraft4.xml'/>
+    <Import file='modules/default/BiomesOPlenty.xml'/>
+    <Import file='modules/default/Factorization.xml'/>
+    <Import file='modules/default/ThermalExpansion.xml'/>
+    <Import file='modules/default/SimpleOres2.xml'/>
+    <Import file='modules/default/Galacticraft.xml'/>
+    <Import file='modules/default/Chisel.xml'/>
+
+    <!-- Possible mods to support as standard configs:
+         * EmasherResource
+         * GasCraft (natural gas)
+         * Pam's Harvest Craft (salt)
+         * Gregtech
+         * Mariculture
+    -->
+
+    <!-- ***************** Import Mod-provided configs ********************* -->
+    <!-- NOTE: mods will overwrite these configs upon each load -->
+    <OptionalImport file='modules/mods/*.xml'/>
     
-    <!--*************************   Testing & Debugging   **********************************
+    <!-- ******************** Import Custom Configs ************************ -->
+    <OptionalImport file='modules/custom/*.xml'/>
+    
+    <!--*************************   Testing & Debugging   *********************
     *   I use this section for quick-and-dirty experiments
-    *************************************************************************************-->
+    **************************************************************************-->
     <IfChoice name='debugDist' value='true'>
        
         <!-- Experimental distributions should go here -->

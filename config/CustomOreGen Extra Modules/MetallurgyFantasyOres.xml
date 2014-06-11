@@ -521,28 +521,25 @@
 	                    <Setting name='Size' avg=':= 0.75 * prometheumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * prometheumFreq * if(age,age.prometheumClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 			
 	                </StandardGen>
 	
@@ -570,28 +567,25 @@
 	                    <Setting name='Size' avg=':= 0.5 * deepironSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * deepironFreq * if(age,age.deepironClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -619,28 +613,25 @@
 	                    <Setting name='Size' avg=':= 0.5 * infuscoliumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * infuscoliumFreq * if(age,age.infuscoliumClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -667,29 +658,26 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * oureclaseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * oureclaseFreq * if(age,age.oureclaseClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 40 to 16  -->
-	                    <Setting name='Height' avg=':= 60/128 * dimension.groundLevel' range=':= 20/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 40 to 20  -->
+	                    <Setting name='Height' avg=':= 40/64 * dimension.groundLevel' range=':= 10/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
+			<BiomeType name='Frozen.*' weight='1'/>
 			<BiomeType name='Jungle.*' weight='1'/>
-			<BiomeType name='Taiga.*' weight='1'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0.25'/>
-			<BiomeType name='Hills.*' weight='0.25'/>
-			<BiomeType name='Cold.*' weight='0.25'/>
-			<BiomeType name='Ice.*' weight='0.25'/>
-			<BiomeType name='Frozen.*' weight='0.25'/>
-			<BiomeType name='Ocean.*' weight='0.25'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -717,28 +705,25 @@
 	                    <Setting name='Size' avg=':= 0.375 * astralsilverSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.2 * astralsilverFreq * if(age,age.astralsilverClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
+			<BiomeType name='Frozen.*' weight='1'/>
 			<BiomeType name='Jungle.*' weight='1'/>
-			<BiomeType name='Taiga.*' weight='1'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0.25'/>
-			<BiomeType name='Hills.*' weight='0.25'/>
-			<BiomeType name='Cold.*' weight='0.25'/>
-			<BiomeType name='Ice.*' weight='0.25'/>
-			<BiomeType name='Frozen.*' weight='0.25'/>
-			<BiomeType name='Ocean.*' weight='0.25'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -766,28 +751,25 @@
 	                    <Setting name='Size' avg=':= 0.375 * carmotSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * carmotFreq * if(age,age.carmotClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 64/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
+			<BiomeType name='Frozen.*' weight='1'/>
 			<BiomeType name='Jungle.*' weight='1'/>
-			<BiomeType name='Taiga.*' weight='1'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0.25'/>
-			<BiomeType name='Hills.*' weight='0.25'/>
-			<BiomeType name='Cold.*' weight='0.25'/>
-			<BiomeType name='Ice.*' weight='0.25'/>
-			<BiomeType name='Frozen.*' weight='0.25'/>
-			<BiomeType name='Ocean.*' weight='0.25'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -814,29 +796,26 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * mithrilSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.15 * mithrilFreq * if(age,age.mithrilClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 40 to 16  -->
-	                    <Setting name='Height' avg=':= 50/128 * dimension.groundLevel' range=':= 22/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 40 to 20  -->
+	                    <Setting name='Height' avg=':= 30/64 * dimension.groundLevel' range=':= 10/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
+			<BiomeType name='Frozen.*' weight='1'/>
 			<BiomeType name='Jungle.*' weight='1'/>
-			<BiomeType name='Taiga.*' weight='1'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0.25'/>
-			<BiomeType name='Hills.*' weight='0.25'/>
-			<BiomeType name='Cold.*' weight='0.25'/>
-			<BiomeType name='Ice.*' weight='0.25'/>
-			<BiomeType name='Frozen.*' weight='0.25'/>
-			<BiomeType name='Ocean.*' weight='0.25'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -864,28 +843,25 @@
 	                    <Setting name='Size' avg=':= 0.375 * rubraciumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.1 * rubraciumFreq * if(age,age.rubraciumClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 32 to 0  -->
-	                    <Setting name='Height' avg=':= 32/128 * dimension.groundLevel' range=':= 32/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 16/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
+			<BiomeType name='Frozen.*' weight='1'/>
 			<BiomeType name='Jungle.*' weight='1'/>
-			<BiomeType name='Taiga.*' weight='1'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0.25'/>
-			<BiomeType name='Hills.*' weight='0.25'/>
-			<BiomeType name='Cold.*' weight='0.25'/>
-			<BiomeType name='Ice.*' weight='0.25'/>
-			<BiomeType name='Frozen.*' weight='0.25'/>
-			<BiomeType name='Ocean.*' weight='0.25'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -913,28 +889,25 @@
 	                    <Setting name='Size' avg=':= 0.5 * orichalcumSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.1 * orichalcumFreq * if(age,age.orichalcumClusters,1) * _default_'/>
 			<!--  HEIGHT: Layers 20 to 0  -->
-	                    <Setting name='Height' avg=':= 20/128 * dimension.groundLevel' range=':= 20/128 * dimension.groundLevel'/>
+	                    <Setting name='Height' avg=':= 10/64 * dimension.groundLevel' range=':= 10/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='1'/>
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
 			<BiomeType name='Hills.*' weight='1'/>
-			<BiomeType name='Cold.*' weight='1'/>
-			<BiomeType name='Ice.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
 			<BiomeType name='Frozen.*' weight='1'/>
-			<BiomeType name='Ocean.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -961,29 +934,26 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * adamantineSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.05 * adamantineFreq * if(age,age.adamantineClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 10 to 0  -->
-	                    <Setting name='Height' avg=':= 12/128 * dimension.groundLevel' range=':= 12/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 12 to 0  -->
+	                    <Setting name='Height' avg=':= 6/64 * dimension.groundLevel' range=':= 6/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='1'/>
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
 			<BiomeType name='Hills.*' weight='1'/>
-			<BiomeType name='Cold.*' weight='1'/>
-			<BiomeType name='Ice.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
 			<BiomeType name='Frozen.*' weight='1'/>
-			<BiomeType name='Ocean.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -1010,29 +980,26 @@
 	
 	                    <Setting name='Size' avg=':= 0.375 * atlarusSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.05 * atlarusFreq * if(age,age.atlarusClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 10 to 0  -->
-	                    <Setting name='Height' avg=':= 12/128 * dimension.groundLevel' range=':= 12/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 12 to 0  -->
+	                    <Setting name='Height' avg=':= 6/64 * dimension.groundLevel' range=':= 6/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
-			<BiomeType name='Forest.*' weight='0'/>
-			<BiomeType name='Swamp.*' weight='0'/>
-			<BiomeType name='Plains.*' weight='0'/>
-			<BiomeType name='Desert.*' weight='0'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='1'/>
+			<!--  ALL Biomes  -->
+			<BiomeType name='Forest.*' weight='1'/>
+			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
 			<BiomeType name='Hills.*' weight='1'/>
-			<BiomeType name='Cold.*' weight='1'/>
-			<BiomeType name='Ice.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
+			<BiomeType name='Desert.*' weight='1'/>
 			<BiomeType name='Frozen.*' weight='1'/>
-			<BiomeType name='Ocean.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	

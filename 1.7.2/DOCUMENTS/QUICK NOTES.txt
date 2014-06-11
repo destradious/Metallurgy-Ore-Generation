@@ -1,0 +1,7 @@
+- Utility Ores are NOT working. There's a screw up between Custom Ores and Metallurgy, so I've removed them from the Metallurgy Custom Ores config file (for now).
+
+- Nether Ores have not been updated/changed from their original settings. They will spawn anywhere in the Nether.
+
+- So far I have removed Biome modifications to Ore Generation for all Metallurgy Ores. I'm debating whether or not to make generation different depending on the biome.
+
+- Defined heights and ranges for vanilla and Metallurgy ores (other than Nether, Utility, and Ender) are working.

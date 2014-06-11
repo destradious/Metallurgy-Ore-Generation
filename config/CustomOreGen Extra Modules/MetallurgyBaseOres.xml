@@ -219,31 +219,28 @@
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
 	
-	                    <Setting name='Size' avg=':= 0.75 * copperSize * _default_'/> 
+	                    <Setting name='Size' avg=':= 0.875 * copperSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.6 * copperFreq * if(age,age.copperClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 64 to 0  -->
+	                    <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -268,31 +265,28 @@
 	                    <DrawWireframe>:=drawWireframes</DrawWireframe>
 	                    <WireframeColor>0x60101010</WireframeColor>
 	
-	                    <Setting name='Size' avg=':= 0.875 * tinSize * _default_'/> 
+	                    <Setting name='Size' avg=':= 0.75 * tinSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.5 * tinFreq * if(age,age.tinClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 64 to 0  -->
+	                    <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
@@ -317,29 +311,26 @@
 	
 	                    <Setting name='Size' avg=':= 0.5 * manganeseSize * _default_'/> 
 	                    <Setting name='Frequency' avg=':= 0.25 * manganeseFreq * if(age,age.manganeseClusters,1) * _default_'/>
-			<!--  HEIGHT: Layers 128 to 0  -->
-	                    <Setting name='Height' avg=':= 128/128 * dimension.groundLevel' range=':= 128/128 * dimension.groundLevel'/>
+			<!--  HEIGHT: Layers 50 to 0  -->
+	                    <Setting name='Height' avg=':= 25/64 * dimension.groundLevel' range=':= 25/64 * dimension.groundLevel'/>
 	
 	  		  <!--1 = 100%  (Normal loads full amount).  0.5 = 50%  (Loads Half as much).  0 = 0%  (None loads in this Biome). -->
-			<BiomeType name='.*' weight='0.5'/>
+			<BiomeType name='.*' weight='0.6'/>
 			<Biome name='Hell.*' weight='-1'/>
 
 			<!-- PLUS (+) The following Biome Modifiers  (0 = 50%, 0.25 = 75%, 1 = 100%) -->
-			<!--  EASY Biomes  -->
+			<!--  ALL Biomes  -->
 			<BiomeType name='Forest.*' weight='1'/>
-			<BiomeType name='Swamp.*' weight='1'/>
 			<BiomeType name='Plains.*' weight='1'/>
+			<BiomeType name='Mountain.*' weight='1'/>
+			<BiomeType name='Hills.*' weight='1'/>
+			<BiomeType name='Swamp.*' weight='1'/>
+			<BiomeType name='Water.*' weight='1'/>
 			<BiomeType name='Desert.*' weight='1'/>
-			<!--  MEDIUM Biomes  -->
-			<BiomeType name='Jungle.*' weight='0.25'/>
-			<BiomeType name='Taiga.*' weight='0.25'/>
-			<!--  HARD Biomes  -->
-			<BiomeType name='Extreme.*' weight='0'/>
-			<BiomeType name='Hills.*' weight='0'/>
-			<BiomeType name='Cold.*' weight='0'/>
-			<BiomeType name='Ice.*' weight='0'/>
-			<BiomeType name='Frozen.*' weight='0'/>
-			<BiomeType name='Ocean.*' weight='0'/>
+			<BiomeType name='Frozen.*' weight='1'/>
+			<BiomeType name='Jungle.*' weight='1'/>
+			<BiomeType name='Wasteland.*' weight='1'/>
+			<BiomeType name='Beach.*' weight='1'/>
 	
 	                </StandardGen>
 	
