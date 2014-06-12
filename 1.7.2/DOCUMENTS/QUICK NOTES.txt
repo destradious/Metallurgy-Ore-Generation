@@ -1,4 +1,4 @@
-- Utility Ores are NOT working. There's a screw up between Custom Ores and Metallurgy, so I've removed them from the Metallurgy Custom Ores config file (for now).
+- Utility Ores are NOT included in Custom Ores because they were messing up. They are spawned normally through Metallurgy, which is fine, since they don't need customizing anyway.
 
 - Nether Ores have not been updated/changed from their original settings. They will spawn anywhere in the Nether.
 

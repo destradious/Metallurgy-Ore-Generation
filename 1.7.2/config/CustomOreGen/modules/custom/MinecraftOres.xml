@@ -382,6 +382,9 @@
                 </StandardGen> 
 
                 <StandardGen name='CoalHills' block='minecraft:coal_ore' inherits='CoalStandard'> 
+                    <Description>  Adds Coal to spawn between heights 105 and 65 (up into mountains/hills), but less often. </Description>      
+                    <Setting name='Size' avg=':= 1 * coalSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 0.5 * coalFreq * if(age,age.coalClusters,1) * _default_'/>
 		<!--  HEIGHT: Layers 105 to 65  -->
                     <Setting name='Height' avg=':= 85/64 * dimension.groundLevel' range=':= 20/64 * dimension.groundLevel'/> 
                 </StandardGen> 
@@ -457,10 +460,12 @@
                 </StandardGen> 
 
                 <StandardGen name='IronHills' block='minecraft:iron_ore' inherits='IronStandard'> 
+                    <Description>  Adds Iron to spawn between heights 105 and 65 (up into mountains/hills), but less often. </Description>      
+                    <Setting name='Size' avg=':= 0.75 * ironSize * _default_'/> 
+                    <Setting name='Frequency' avg=':= 0.4 * ironFreq * if(age,age.ironClusters,1) * _default_'/>
 		<!--  HEIGHT: Layers 105 to 65  -->
                     <Setting name='Height' avg=':= 85/64 * dimension.groundLevel' range=':= 20/64 * dimension.groundLevel'/> 
                 </StandardGen> 
-
             </IfCondition>
             
 
@@ -527,6 +532,7 @@
                 </StandardGen> 
 
                 <StandardGen name='GoldHills' block='minecraft:gold_ore' inherits='GoldStandard'> 
+                    <Description>  Adds Gold to spawn between heights 105 and 65 (up into mountains/hills), but less often. </Description>      
                     <Setting name='Size' avg=':= 0.75 * goldSize * _default_'/> 
                     <Setting name='Frequency' avg=':= 0.1 * goldFreq * if(age,age.goldClusters,1) * _default_'/>
 		<!--  HEIGHT: Layers 105 to 65  -->
