@@ -462,7 +462,7 @@
                 <StandardGen name='IronHills' block='minecraft:iron_ore' inherits='IronStandard'> 
                     <Description>  Adds Iron to spawn between heights 105 and 65 (up into mountains/hills), but less often. </Description>      
                     <Setting name='Size' avg=':= 0.75 * ironSize * _default_'/> 
-                    <Setting name='Frequency' avg=':= 0.4 * ironFreq * if(age,age.ironClusters,1) * _default_'/>
+                    <Setting name='Frequency' avg=':= 0.3 * ironFreq * if(age,age.ironClusters,1) * _default_'/>
 		<!--  HEIGHT: Layers 105 to 65  -->
                     <Setting name='Height' avg=':= 85/64 * dimension.groundLevel' range=':= 20/64 * dimension.groundLevel'/> 
                 </StandardGen> 
