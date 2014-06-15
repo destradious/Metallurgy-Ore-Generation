@@ -1775,7 +1775,7 @@
          
 	  <!-- *****  Standard Cluster  ***** -->
              <IfCondition condition=':= if(age, age.ignatiusClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='ignatiusStandard' block='Metallurgy:nether.ore' inherits='PresetStandardGen'> 
+                 <StandardGen name='ignatiusStandard' block='Metallurgy:nether.ore' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60e46c18</WireframeColor>
@@ -1834,7 +1834,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.shadowironClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='shadowironStandard' block='Metallurgy:nether.ore:1' inherits='PresetStandardGen'> 
+                 <StandardGen name='shadowironStandard' block='Metallurgy:nether.ore:1' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60786657</WireframeColor>
@@ -1893,7 +1893,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.lemuriteClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='lemuriteStandard' block='Metallurgy:nether.ore:2' inherits='PresetStandardGen'> 
+                 <StandardGen name='lemuriteStandard' block='Metallurgy:nether.ore:2' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60a9aaaa</WireframeColor>
@@ -1952,7 +1952,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.midasiumClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='midasiumStandard' block='Metallurgy:nether.ore:3' inherits='PresetStandardGen'> 
+                 <StandardGen name='midasiumStandard' block='Metallurgy:nether.ore:3' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60ec992a</WireframeColor>
@@ -2011,7 +2011,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.vyroxeresClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='vyroxeresStandard' block='Metallurgy:nether.ore:4' inherits='PresetStandardGen'> 
+                 <StandardGen name='vyroxeresStandard' block='Metallurgy:nether.ore:4' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x6054d316</WireframeColor>
@@ -2070,7 +2070,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.ceruclaseClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='ceruclaseStandard' block='Metallurgy:nether.ore:5' inherits='PresetStandardGen'> 
+                 <StandardGen name='ceruclaseStandard' block='Metallurgy:nether.ore:5' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x604c859f</WireframeColor>
@@ -2129,7 +2129,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.adluoriteClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='adluoriteStandard' block='Metallurgy:nether.ore:6' inherits='PresetStandardGen'> 
+                 <StandardGen name='adluoriteStandard' block='Metallurgy:nether.ore:6' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x6056c2c2</WireframeColor>
@@ -2188,7 +2188,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.kalendriteClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='kalendriteStandard' block='Metallurgy:nether.ore:7' inherits='PresetStandardGen'> 
+                 <StandardGen name='kalendriteStandard' block='Metallurgy:nether.ore:7' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x609447a8</WireframeColor>
@@ -2247,7 +2247,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.vulcaniteClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='vulcaniteStandard' block='Metallurgy:nether.ore:8' inherits='PresetStandardGen'> 
+                 <StandardGen name='vulcaniteStandard' block='Metallurgy:nether.ore:8' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60d14017</WireframeColor>
@@ -2306,7 +2306,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.sanguiniteClusters > 0, netherDist = "vanillaStdGen")'>
-                 <StandardGen name='sanguiniteStandard' block='Metallurgy:nether.ore:9' inherits='PresetStandardGen'> 
+                 <StandardGen name='sanguiniteStandard' block='Metallurgy:nether.ore:9' inherits='PresetStandardGen_Nether'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60da0014</WireframeColor>
@@ -2361,13 +2361,18 @@
          </ConfigSection>
      </IfCondition>
      
-         <!--*******************   Ender Ores   ***********************
+
+
+
+
+
+         <!--*******************   Ender Ores   ************************************************
          *   
          *   Ender ores include eximite and meutoite.  These ores can
          *   only be found naturally in the End.  Distribution is based
          *   on iron.
          *   
-         **********************************************************-->
+         ****************************************************************************************-->
      
      <IfCondition condition=':= dimension.generator = "EndRandomLevelSource"'>
 	 
@@ -2395,7 +2400,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.eximiteClusters > 0, enderDist = "vanillaStdGen")'>
-                 <StandardGen name='eximiteStandard' block='Metallurgy:base.ore:0' inherits='PresetStandardGen'> 
+                 <StandardGen name='eximiteStandard' block='Metallurgy:ender.ore:0' inherits='PresetStandardGen_Ender'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60714e8a</WireframeColor>
@@ -2408,7 +2413,7 @@
              </IfCondition>
                  
              <IfCondition condition=':= if(age, age.eximiteVeins > 0, enderDist = "layeredVeins")'>
-                 <Veins name='eximiteVeins' block='Metallurgy:base.ore:0' inherits='PresetLayeredVeins'>
+                 <Veins name='eximiteVeins' block='Metallurgy:ender.ore:0' inherits='PresetLayeredVeins'>
                      <Description> 
                          Ore spawns in the height 30-50 range.  The veins are average in length and size.
                      </Description> 
@@ -2425,7 +2430,7 @@
              </IfCondition>   
                  
              <IfCondition condition=':= if(age, age.eximiteClouds > 0, enderDist = "strategicClouds")'>
-                 <Cloud name='eximiteCloud' block='Metallurgy:base.ore:0' inherits='PresetStrategicCloud'>
+                 <Cloud name='eximiteCloud' block='Metallurgy:ender.ore:0' inherits='PresetStrategicCloud'>
                      <Description>  
                          Diffuse ore cloud surrounded by single-block "hint" veins, found in cold biomes.
                      </Description> 
@@ -2454,7 +2459,7 @@
          <ConfigSection>
          
              <IfCondition condition=':= if(age, age.meutoiteClusters > 0, enderDist = "vanillaStdGen")'>
-                 <StandardGen name='meutoiteStandard' block='Metallurgy:ender.ore:1' inherits='PresetStandardGen'> 
+                 <StandardGen name='meutoiteStandard' block='Metallurgy:ender.ore:1' inherits='PresetStandardGen_Ender'> 
                      <Description> Equivalent to vanilla minecraft ore distribution </Description>
                      <DrawWireframe>:=drawWireframes</DrawWireframe>
                      <WireframeColor>0x60671f9c</WireframeColor>
