@@ -571,8 +571,8 @@
                      <WireframeColor>0x60e25d21</WireframeColor>
                      <Setting name='Size' avg=':= 0.875 * baseSize * _default_'/> 
                      <Setting name='Frequency' avg=':= 0.6 * baseFreq * if(age,age.m3copperClusters,1) * _default_'/>
-		<!--  HEIGHT: Layers 64 to 0  -->
-                     <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/> 
+		<!--  HEIGHT: Layers 96 to 32  -->
+                     <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/> 
                  </StandardGen> 
              </IfCondition>
                  
@@ -644,8 +644,8 @@
                      <WireframeColor>0x60a8a8a8</WireframeColor>
                      <Setting name='Size' avg=':= 0.75 * baseSize * _default_'/> 
                      <Setting name='Frequency' avg=':= 0.5 * baseFreq * if(age,age.m3tinClusters,1) * _default_'/>
-		<!--  HEIGHT: Layers 64 to 0  -->
-                     <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/> 
+		<!--  HEIGHT: Layers 96 to 32  -->
+                     <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/> 
                  </StandardGen> 
              </IfCondition>
                  
