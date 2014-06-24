@@ -547,6 +547,7 @@
      
      
 <!-- !!!!!!!!!  Removed because they weren't working right at all.  Settings are backed up in original files.  !!!!!!!!!!!!! -->
+<!-- Metallurgy on its own will generate these without bothering with Custom Ore configs. -->
 
 
 
@@ -799,8 +800,8 @@
                  <WireframeColor>0x60a3a666</WireframeColor>
                  <Setting name='Size' avg=':= 0.75 * preciousSize * _default_'/> 
                      <Setting name='Frequency' avg=':= 0.3 * preciousFreq * if(age,age.zincClusters,1) * _default_'/>
-		<!--  HEIGHT: Layers 64 to 0  -->
-                     <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 96 to 32  -->
+                     <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
                  </StandardGen> 
              </IfCondition>
                      
@@ -866,8 +867,8 @@
                  <WireframeColor>0x60cbcbcb</WireframeColor>
                  <Setting name='Size' avg=':= 0.75 * preciousSize * _default_'/> 
                      <Setting name='Frequency' avg=':= 0.3 * preciousFreq * if(age,age.m3silverClusters,1) * _default_'/>
-		<!--  HEIGHT: Layers 64 to 0  -->
-                     <Setting name='Height' avg=':= 32/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 96 to 32  -->
+                     <Setting name='Height' avg=':= 64/64 * dimension.groundLevel' range=':= 32/64 * dimension.groundLevel'/>
                  </StandardGen> 
              </IfCondition>
                      
@@ -933,8 +934,8 @@
                  <WireframeColor>0x60b3d0d5</WireframeColor>
                  <Setting name='Size' avg=':= 0.375 * preciousSize * _default_'/> 
                      <Setting name='Frequency' avg=':= 0.15 * preciousFreq * if(age,age.platinumClusters,1) * _default_'/>
-		<!--  HEIGHT: Layers 105 to 65   (Only up high in hills/mountains) -->
-                     <Setting name='Height' avg=':= 85/64 * dimension.groundLevel' range=':= 20/64 * dimension.groundLevel'/>
+		<!--  HEIGHT: Layers 32 to 0  -->
+                     <Setting name='Height' avg=':= 16/64 * dimension.groundLevel' range=':= 16/64 * dimension.groundLevel'/>
                  </StandardGen> 
              </IfCondition>
                      
